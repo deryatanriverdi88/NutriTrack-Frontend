@@ -84,6 +84,7 @@ class Signup extends Component {
             type="password"
           />
        </label>
+       <input type="submit"/>
      </form>
    </div>
     )
