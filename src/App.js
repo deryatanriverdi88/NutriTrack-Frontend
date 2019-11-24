@@ -16,7 +16,7 @@ class App extends React.Component  {
   }
 
   componentDidMount(){
-    console.log(localStorage.token )
+    // console.log(localStorage.token )
     if (localStorage.token === "undefined" || localStorage.length === 0){
       this.redirect('login')
     } else {
@@ -28,7 +28,7 @@ class App extends React.Component  {
  render(){
 
       
-console.log(localStorage === undefined)
+// console.log(localStorage === undefined)
        switch(this.state.pages){
          case "login":
            return <Pages.Login redirect={this.redirect}/>
