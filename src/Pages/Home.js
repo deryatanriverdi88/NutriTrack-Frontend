@@ -5,7 +5,7 @@ class Home extends Component{
 
   state = {
     username: '',
- 
+    user: {}
   }
 
   componentDidMount(){
@@ -19,7 +19,8 @@ class Home extends Component{
       // debugger
       // console.log(userObject)
       this.setState({
-        username: userObject.username
+        username: userObject.username,
+        user: userObject
       })
     })
   }
