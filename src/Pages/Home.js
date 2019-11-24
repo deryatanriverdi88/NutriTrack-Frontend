@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import Profile from "./Profile"
 
 
 class Home extends Component{
 
   state = {
     username: '',
-    user: {}
+    user: {}, 
+    profile: false
   }
 
   componentDidMount(){
@@ -24,13 +26,22 @@ class Home extends Component{
       })
     })
   }
-
+ 
+  handleProfile = () => {
+    this.setState({
+      profile: !this.state.profile
+    })
+  }
 
   render() {
+    console.log(this.state.profile)
     return (
     <div>Home Page
-
-      <h2> Welcome {this.state.username} </h2>
+       <h3 onClick={this.handleProfile}>
+         {this.state.profile ? "Home" : "Profile"}
+       </h3>
+       { this.state.profile ? <Profile user={this.state.user}/> : <h2>Welcome {this.state.username} </h2>}
+      {/* <h2> Welcome {this.state.username} </h2> */}
     </div>
     )
      }
