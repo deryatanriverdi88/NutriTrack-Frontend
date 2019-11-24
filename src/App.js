@@ -1,23 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Routes } from './Routes' ;
-import { BrowserRouter as Router } from 'react-router-dom'
-
-class App extends React.Component {
-  render() {
-
-    return (
- 
-      <Router>
-        <Routes/>
-      </Router>
-
-     );
+import Pages from "./Pages"
 
 
+class App extends React.Component  {
+
+  state = {
+    pages: 'login'
   }
-  
+
+  redirect = (pages) =>{
+    this.setState({
+      pages: pages
+    })
+  }
+
+  componentDidMount(){
+    console.log(localStorage.token )
+    if (localStorage.token === "undefined"){
+      this.redirect('login')
+    } else {
+      this.redirect('home')
+    }
+  }
+
+
+ render(){
+
+      
+
+       switch(this.state.pages){
+         case "login":
+           return <Pages.Login redirect={this.redirect}/>
+         case 'home':
+           return <Pages.Home/>
+       }
+
+ }
 }
 
 export default App;
