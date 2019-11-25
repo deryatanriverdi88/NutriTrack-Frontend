@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import { useSelector } from 'react-redux'
 
-class Profile extends Component {
- state = {}
- render() {
-     console.log(this.props)
-     const {username, name, age, weight, height, goalCalorie, gender} = this.props.user
+function  Profile(){
+
+const current_user = useSelector(state => {
+    return state.current_user
+})
+
+const {username, name, age, weight, height, goalCalorie, gender} = current_user
   return(
    <div> 
        <h1> Profile Page</h1>
@@ -17,11 +20,12 @@ class Profile extends Component {
         <li>Weight : {weight} </li>
         <li>Daily caolrie goal : {goalCalorie} </li> 
         <button> Edit profile!</button>
+        <button> Delete your profile !</button>
        </ul>
    </div>
     )
-   }
- }
+   
+  }
 
 
 

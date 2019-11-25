@@ -143,7 +143,9 @@ handleClick = ()=>{
 }
 
 handleLoginSubmit = (event) => {
+
    event.preventDefault()
+  //  debugger
    fetch('http://localhost:3000/login', {
      method: 'POST',
      headers: {
