@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Profile from "./Profile"
+import { connect } from 'react-redux'
 
 
 class Home extends Component{
 
   state = {
-    username: '',
-    user: {}, 
+
     profile: false
   }
 
@@ -18,12 +18,7 @@ class Home extends Component{
     })
     .then(res => res.json())
     .then(userObject => {
-      // debugger
-      // console.log(userObject)
-      this.setState({
-        username: userObject.username,
-        user: userObject
-      })
+      this.props.setUser(userObject)
     })
   }
  
@@ -33,18 +28,36 @@ class Home extends Component{
     })
   }
 
-  render() {
-    console.log(this.state.profile)
+  render() { 
+  
+    console.log(this.props.current_user)
+    // debugger
     return (
     <div>Home Page
        <h3 onClick={this.handleProfile}>
          {this.state.profile ? "Home" : "Profile"}
        </h3>
-       { this.state.profile ? <Profile user={this.state.user}/> : <h2>Welcome {this.state.username} </h2>}
-      {/* <h2> Welcome {this.state.username} </h2> */}
+       { this.state.profile ? <Profile/> : <h2>Welcome {this.props.current_user ? this.props.current_user.username : null} </h2>}
     </div>
-    )
-     }
+      )
+   }
  }
 
-export default Home
+function mapDispatchToProps(dispatch){
+  return {
+    setUser: (userObject) => {
+      dispatch({
+          type: 'SET_USER', payload: userObject
+        })
+    }
+  }
+}
+
+function mapStateToProps(state){
+  return {
+    current_user: state.current_user
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
+
