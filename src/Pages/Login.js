@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 
 
@@ -160,9 +161,11 @@ handleLoginSubmit = (event) => {
    .then(res => res.json())
    .then(userData =>{
      localStorage.setItem('token', userData.token)
-    //  console.log(userData)
+     console.log(userData)
       if(userData.token){
-        this.props.redirect('home')
+        this.props.setUser(userData.current_user)
+        this.props.history.push(`/profile`)
+
       }  else {
         this.setState({
           errors: userData.error
@@ -223,8 +226,8 @@ handleSignupSubmit = (event) => {
 }
 
  render() {
-
-  //  console.log(this.state)
+ console.log(this.props.history)
+   console.log(this.current_user)
   return(
    <div>
     {
@@ -252,5 +255,21 @@ handleSignupSubmit = (event) => {
    }
  }
 
+ const mapDispatchToProps = (dispatch) =>{
+  return {
+    setUser: (userObject) => {
+      dispatch({
+          type: 'SET_USER', payload: userObject
+        })
+    }
+  }
+}
 
-export default Login
+const mapStateToProps = (state) => {
+  return {
+    current_user: state.current_user
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps) (Login)

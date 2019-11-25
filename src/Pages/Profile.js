@@ -8,7 +8,7 @@ const current_user = useSelector(state => {
     return state.user
 })
 console.log(current_user)
-if(current_user.id) {
+if(current_user) {
   const {username, name, age, weight, height, goalCalorie, gender} = current_user
   return(
     <div> 
@@ -27,7 +27,7 @@ if(current_user.id) {
     </div>
      )
 }
- return null
+ return "Nothing Happenned"
    
   }
 
