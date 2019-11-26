@@ -226,8 +226,8 @@ handleSignupSubmit = (event) => {
 }
 
  render() {
- console.log(this.props.history)
-   console.log(this.current_user)
+//  console.log(this.props.history)
+//    console.log(this.current_user)
   return(
    <div>
     {

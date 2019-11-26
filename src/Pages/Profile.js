@@ -7,8 +7,9 @@ const current_user = useSelector(state => {
     // debugger 
     return state.user
 })
-console.log(current_user)
-if(current_user) {
+// console.log(localStorage.token)
+// console.log(current_user)
+if(current_user.id) {
   const {username, name, age, weight, height, goalCalorie, gender} = current_user
   return(
     <div> 
@@ -27,7 +28,13 @@ if(current_user) {
     </div>
      )
 }
- return "Nothing Happenned"
+ return (
+      <>
+      <h3>
+        There is no user!
+      </h3>
+      </>
+   )
    
   }
 
