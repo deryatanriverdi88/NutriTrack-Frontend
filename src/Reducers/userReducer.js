@@ -4,7 +4,7 @@ export default function userReducer(state= {}, {type, payload}){
     switch (type) {
         case "SET_USER":
             // debugger
-            return payload 
+            return payload
         case 'CLEAR_USER':
              return {}
         default:

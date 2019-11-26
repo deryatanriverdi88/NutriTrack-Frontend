@@ -6,6 +6,7 @@ function  Home(){
   const current_user = useSelector(state => {
     return state.user
 })
+
     // debugger
     return (
     <div>Home Page
