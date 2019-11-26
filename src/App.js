@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import Routes from './Routes'
-import { BrowserRouter as Router } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from './Components/Nav'
+
 
 
 class App  extends React.Component{
@@ -20,15 +20,25 @@ class App  extends React.Component{
 
     })
   }
+ 
+  clearToken = () =>{
+    localStorage.clear()
+  }
 
-
+  logOut = () =>{
+    this.props.clearUser()
+    this.clearToken()
+    
+    // this.props.history.push('/login')
+  }
  
  render (){
+   console.log(this.props)
   return (
-    <Router>
-        <Nav/>
+     <>
+        <Nav clearUser={this.logOut}/>
         <Routes/>
-     </Router>
+    </>
     )
    }
 }
@@ -39,6 +49,11 @@ const mapDispatchToProps = (dispatch) =>{
        dispatch({
            type: 'SET_USER', payload: userObject
          })
+     }, 
+     clearUser: () => {
+      dispatch({
+        type: 'CLEAR_USER'
+      })
      }
    }
  }

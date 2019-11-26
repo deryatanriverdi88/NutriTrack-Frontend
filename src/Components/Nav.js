@@ -1,18 +1,37 @@
 import React, { Component } from 'react'
-import { Link} from 'react-router-dom'
+import { Link, NavLink} from 'react-router-dom'
+import { useSelector, useDispatch} from 'react-redux'
 
-class Nav extends Component {
+function Nav(props){
 
- render() {
+  const current_user = useSelector(state => {
+    // debugger 
+    return state.user
+   })
+ 
+ 
+  
   return(
+    
    <nav>
-       <Link to="/profile">Profile</Link>
-       <Link to="/login">Login</Link>
+     {
+       current_user.id ? 
+       <>
        <Link to="/">Home</Link>
+       <Link to="/profile">Profile</Link>
+       <NavLink to='/login'><button onClick={props.clearUser}>Logout</button></NavLink>
+       </> : 
+       <>
+       <Link to="/">Home</Link>
+       <Link to="/login">Login</Link>
+       </>
+     }
+       
+      
    </nav>
     )
    }
- }
+
 
 
 
