@@ -29,7 +29,10 @@ class AddFood extends Component {
 // console.log(this.props.foods)
 
    const searchedFoods = this.props.foods.filter(food => {
-         return food.name.toLowerCase().includes(this.state.searchValue.toLowerCase())
+    //    debugger
+         if (this.state.searchValue !== ""){
+            return food.name.toLowerCase().includes(this.state.searchValue.toLowerCase())
+         } 
    })
   return(
    <div>
@@ -45,7 +48,7 @@ class AddFood extends Component {
        </form>
 
        <ul>
-            Foods 
+
 
             {
                 searchedFoods.map(food => {
