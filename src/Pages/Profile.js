@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function  Profile(){
 
@@ -8,9 +9,10 @@ const current_user = useSelector(state => {
     return state.user
 })
 // console.log(localStorage.token)
-// console.log(current_user)
+// console.log(current_user.user)
+
 if(current_user.id) {
-  const {username, name, age, weight, height, goalCalorie, gender} = current_user
+  const {username, name, age, weight, height, goal_calorie, gender} = current_user
   return(
     <div> 
         <h1> Profile Page</h1>
@@ -21,8 +23,8 @@ if(current_user.id) {
          <li>Gender : {gender}</li>
          <li>Height : {height} </li>
          <li>Weight : {weight} </li>
-         <li>Daily caolrie goal : {goalCalorie} </li> 
-         <button> Edit profile!</button>
+         <li>Daily caolrie goal : {goal_calorie} </li> 
+         <Link to="./edit"> Edit profile!</Link>
          <button> Delete your profile !</button>
         </ul>
     </div>
@@ -31,7 +33,7 @@ if(current_user.id) {
  return (
       <>
       <h3>
-        There is no user!
+        Loading....
       </h3>
       </>
    )

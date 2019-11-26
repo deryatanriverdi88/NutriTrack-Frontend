@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 class Login extends Component {
  state = {
+   
      username: '',
      password: '',
      name: '',
@@ -226,7 +227,7 @@ handleSignupSubmit = (event) => {
 }
 
  render() {
-//  console.log(this.props.history)
+ console.log(this.props.history)
 //    console.log(this.current_user)
   return(
    <div>
@@ -267,7 +268,7 @@ handleSignupSubmit = (event) => {
 
 const mapStateToProps = (state) => {
   return {
-    current_user: state.current_user
+    current_user: state.user
   }
 }
 
