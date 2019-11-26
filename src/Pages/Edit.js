@@ -41,7 +41,8 @@ class Edit extends Component {
         age: this.state.age,
         weight: this.state.weight,
         height: this.state.height,
-        goal_calorie: this.state.goalCalorie
+        goal_calorie: this.state.goalCalorie,
+        image: this.state.image
       })
     })
     .then(res => res.json())
@@ -103,6 +104,16 @@ class Edit extends Component {
          type="number"
          onChange={this.handleChange}
        />
+    </label>
+    <label htmlFor="image">
+      Image :
+        <input 
+          id="image"
+          name="image"
+          value={this.state.image}
+          type="text"
+          onChange={this.handleChange}
+        />
     </label>
     <label htmlFor="gender">
       Gender :
