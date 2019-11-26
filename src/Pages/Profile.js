@@ -26,11 +26,12 @@ const deleteUser = () => {
 
 if(current_user.id) {
 
-  const {username, name, age, weight, height, goal_calorie, gender} = current_user
+  const {username, name, age, weight, height, goal_calorie, gender, image} = current_user
   return(
     
     <div> 
         <h1> Profile Page</h1>
+        <img className="profile-image" src={image} alt="name"/>
         <h2>Name : {name}</h2>
         <ul>
          <li>Username : {username}</li>

@@ -10,6 +10,7 @@ class Login extends Component {
      password: '',
      name: '',
      age: null,
+     image: "",
      gender: "",
      height: null,
      weight: null,
@@ -75,6 +76,16 @@ signupForm = () => {
          type="number"
          onChange={this.handleChange}
        />
+    </label>
+    <label htmlFor="image"> 
+    Image :
+        <input 
+          id="image"
+          name="image"
+          value={this.state.image}
+          type="text"
+          onChange={this.handleChange}
+        />
     </label>
     <label htmlFor="gender">
       Gender :
@@ -165,7 +176,7 @@ handleLoginSubmit = (event) => {
      console.log(userData)
       if(userData.token){
         this.props.setUser(userData.current_user)
-        this.props.history.push(`/profile`)
+        this.props.history.push(`/`)
 
       }  else {
         this.setState({
@@ -191,7 +202,8 @@ handleSignupSubmit = (event) => {
       weight: this.state.weight,
       height: this.state.height,
       goal_calorie: this.state.goalCalorie,
-      password: this.state.password
+      password: this.state.password,
+      image: this.state.image
     })
   })
   .then(res => res.json())
