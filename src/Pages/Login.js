@@ -173,12 +173,6 @@ handleLoginSubmit = (event) => {
         })
       }
    })
-   .then(
-     this.setState({
-      username: "",
-      password: ''
-     })
-   )
 }
 
 handleSignupSubmit = (event) => {
@@ -205,7 +199,9 @@ handleSignupSubmit = (event) => {
     // console.log(userData)
     localStorage.setItem('token', userData.token)
     if(userData.token){
-      this.props.redirect('home')
+      // debugger
+      this.props.setUser(userData.current_user)
+      this.props.history.push(`/profile`)
     }  else {
       this.setState({
         errors: userData.error
@@ -213,22 +209,11 @@ handleSignupSubmit = (event) => {
       })
     }
   })
-  .then(
-    this.setState({
-      username: "",
-      password: '',
-      age: null,
-      weight: null,
-      height: null, 
-      goalCalorie: null, 
-      gender: ""
-    })
-  )
 }
 
  render() {
- console.log(this.props.history)
-//    console.log(this.current_user)
+//  console.log(this.props.history)
+   console.log(this.props.current_user)
   return(
    <div>
     {
