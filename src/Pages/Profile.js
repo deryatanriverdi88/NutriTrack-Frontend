@@ -14,7 +14,7 @@ const current_user = useSelector(state => {
 
 
 const deleteUser = () => {
-  console.log('delete user')
+  // console.log('delete user')
   fetch(`http://localhost:3000/users/${current_user.id}`, 
   {
     method: 'DELETE'
