@@ -3,18 +3,21 @@ import React from 'react'
 
 const  FoodItem = (props) => {
 const {name, calorie, carb, sugar, fat, serving_size, protein} = props.food
-    console.log(props)
+    // console.log(props)
   return(
     <div> 
         Food Item 
-        <ul onClick={props.handleClick}>
+        <ul>
+          
             <li> Name : { name } </li>
             <li> Calorie :{ calorie } </li>
             <li> Carb : { carb } </li>
             <li> Sugar :{ sugar } </li>
             <li> Fat : { fat } </li>
             <li> Protein : { protein } </li>
-            <li> Serving Size :{ serving_size } </li>
+            <li> Serving Size :{ serving_size } gr </li>
+            <button onClick={props.handleClick}> ❌</button>
+            <button> Add { name } to your diary! </button>
         </ul>
     </div>
    )

@@ -23,4 +23,8 @@
 
 .profile-image{
   width:25%;
+} 
+
+li {
+  list-style: none;
 }

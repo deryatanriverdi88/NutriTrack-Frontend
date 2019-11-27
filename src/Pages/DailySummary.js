@@ -9,7 +9,7 @@ class DailySummary extends Component {
    <div className="daily-summary">
        
       
-       <img className="profile-image" src={this.props.user.image}/>
+       <img className="profile-image" src={this.props.user.image} alt={this.props.user.name}/>
        <h3>
            Remaining calories based on your daily calorie input :  {this.props.user.goal_calorie} cal
            <br></br>
