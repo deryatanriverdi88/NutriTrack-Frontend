@@ -22,7 +22,7 @@ class AddFood extends Component {
  handleClick = (foodItem) => {
      console.log('click')
      this.setState({
-         foodForm: !this.state.foodView,
+         foodForm: !this.state.foodForm,
          food: foodItem
      })
  }
@@ -66,7 +66,7 @@ class AddFood extends Component {
 
             {
                 searchedFoods.map(food => {
-                    return <li onClick={() => this.handleClick(food)}>
+                    return <li key={food.id} onClick={() => this.handleClick(food)}>
                         {food.name}
                     </li>
                 })
