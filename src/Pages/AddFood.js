@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import FoodItem from './FoodItem'
+import FoodForm from '../Components/FoodForm'
 
 class AddFood extends Component {
  state = {
      searchValue:"",
-     foodView: false,
+     foodForm: false,
      food: {}
  }
 
@@ -21,7 +22,7 @@ class AddFood extends Component {
  handleClick = (foodItem) => {
      console.log('click')
      this.setState({
-         foodView: !this.state.foodView,
+         foodForm: !this.state.foodView,
          food: foodItem
      })
  }
@@ -36,10 +37,10 @@ class AddFood extends Component {
 }
  render() {
 
-console.log(this.state.foodView, this.state.food)
+// console.log(this.state.foodView, this.state.food)
 // console.log(this.state.searchValue)
 // console.log(this.props.foods)
-console.log(this.props)
+// console.log(this.props)
 
    const searchedFoods = this.props.foods.filter(food => {
     //    debugger
@@ -74,10 +75,10 @@ console.log(this.props)
        </ul>
 
        {
-           this.state.foodView ? 
+           this.state.foodForm ? 
            <>
-                    <FoodItem food={this.state.food} handleClick={this.handleClick} />
-                
+                    <FoodForm food={this.state.food} handleClick={this.handleClick} />
+                    {/* <FoodItem food={this.state.food} handleClick={this.handleClick} /> */}
            </> : 
            <>
            </>
