@@ -1,17 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import FoodItem from './FoodItem'
 
 class AddFood extends Component {
  state = {
-     searchValue:""
+     searchValue:"",
+     foodView: false,
+     food: {}
  }
 
  handleChange = (e) => {
      console.log(e.target.value)
      this.setState({
          searchValue: e.target.value
+         
      })
 
+ }
+
+ handleClick = (foodItem) => {
+     console.log('click')
+     this.setState({
+         foodView: !this.state.foodView,
+         food: foodItem
+     })
  }
 
  componentDidMount(){
@@ -24,9 +36,10 @@ class AddFood extends Component {
 }
  render() {
 
-
+console.log(this.state.foodView, this.state.food)
 // console.log(this.state.searchValue)
 // console.log(this.props.foods)
+console.log(this.props)
 
    const searchedFoods = this.props.foods.filter(food => {
     //    debugger
@@ -52,13 +65,23 @@ class AddFood extends Component {
 
             {
                 searchedFoods.map(food => {
-                    return <li>
+                    return <li onClick={() => this.handleClick(food)}>
                         {food.name}
                     </li>
                 })
             }
             
        </ul>
+
+       {
+           this.state.foodView ? 
+           <>
+                    <FoodItem food={this.state.food} handleClick={this.handleClick} />
+                
+           </> : 
+           <>
+           </>
+       }
 
 
    </div>
