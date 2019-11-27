@@ -13,6 +13,7 @@ const Routes = () => {
             <Route exact path="/login" component={Pages.Login}/> 
             <Route exact path='/edit' component={Pages.Edit}/>
             <Route exact path="/add-food" component={Pages.AddFood}/>
+            <Route exact path="/food/:id" component={Pages.FoodItem}/>
         
           </Switch>
     </div>
