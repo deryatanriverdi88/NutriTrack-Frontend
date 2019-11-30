@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import FoodItem from './FoodItem'
 import FoodForm from '../Components/FoodForm'
 
 class AddFood extends Component {
@@ -78,7 +77,7 @@ class AddFood extends Component {
            this.state.foodForm ? 
            <>
                     <FoodForm food={this.state.food} handleClick={this.handleClick} />
-                    {/* <FoodItem food={this.state.food} handleClick={this.handleClick} /> */}
+                
            </> : 
            <>
            </>
