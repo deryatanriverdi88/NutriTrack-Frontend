@@ -18,7 +18,8 @@ class Edit extends Component {
  }
 
  handleChange = (event) => {
-    // console.log(event.target.value)
+    console.log(event.target.value)
+
     this.setState({
       [event.target.name] : event.target.value
     })
@@ -66,7 +67,8 @@ class Edit extends Component {
     // console.log("state ------", this.state)
     //  console.log(this.props.current_user)
     // console.log(this.state)
-     const {name, username, age, weight, height, goal_calorie} = this.state
+  const {name, username, age, weight, height, goalCalorie} = this.state
+  console.log(name, this.state.goalCalorie)
   return(
       <>
        
@@ -150,8 +152,8 @@ class Edit extends Component {
       Daily goal calorie : 
        <input 
          id="goalCalorie"
-         name="goal_calorie"
-         value={goal_calorie}
+         name="goalCalorie"
+         value={goalCalorie}
          type="number"
          onChange={this.handleChange}
        />
