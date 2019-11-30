@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import FoodItem from "../Pages/FoodItem"
+import { withRouter } from 'react-router-dom'
 
 
 
@@ -47,18 +48,16 @@ class FoodForm extends Component {
 
             })
         }).then(res => res.json())
-        .then(dailyIntakeObject => {
-            console.log(dailyIntakeObject)
-        })
+        .then( this.props.history.push('/daily-intake'))
         
     }
     
     render() {
 
-        console.log(this.props.current_user)
+        // console.log(this.props.history)
    
         // console.log(this.state)
-        const {name, calorie, carb, sugar, fat, serving_size, protein} = this.props.food
+        const {name} = this.props.food
         return(
             <div> 
                 Food Form
@@ -98,7 +97,7 @@ class FoodForm extends Component {
                            </select>
                            <input type="submit" value="Add to your dairy!" />
                      </form>
-                    <button onClick={this.props.handleClick}> ❌</button>
+                    <button onClick={this.props.handleClick}> <span> ❌ </span></button>
                     <button onClick={() => this.handleClick(this.props.food)}> See nutrition info </button>
                     {
                         this.state.foodView ? 
@@ -119,6 +118,6 @@ class FoodForm extends Component {
   }
   
  
- export default connect(mapStateToProps)(FoodForm)
+ export default withRouter(connect(mapStateToProps)(FoodForm))
 
 

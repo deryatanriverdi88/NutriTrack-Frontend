@@ -213,7 +213,7 @@ handleSignupSubmit = (event) => {
     if(userData.token){
       // debugger
       this.props.setUser(userData.current_user)
-      this.props.history.push(`/profile`)
+      this.props.history.push(`/`)
     }  else {
       this.setState({
         errors: userData.error
