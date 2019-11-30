@@ -12,8 +12,8 @@ class DailyIntake extends Component {
  render() {
     
      console.log(this.props.current_user.daily_intakes)
+   const  {current_user} =this.props
 
-    
     const breakfast = () => {
         if(this.props.current_user.id && this.props.current_user.daily_intakes) {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
@@ -22,6 +22,7 @@ class DailyIntake extends Component {
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id}>
                   <td > {dailyIntake.food.name }</td> 
+                  <td>{dailyIntake.serving}</td>
                   <td> {dailyIntake.food.calorie}</td> 
                   <td> {dailyIntake.food.fat} </td> 
                   <td> {dailyIntake.food.carbs}</td> 
@@ -41,6 +42,7 @@ class DailyIntake extends Component {
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id}>
                   <td> {dailyIntake.food.name }</td> 
+                  <td>{dailyIntake.serving}</td>
                   <td> {dailyIntake.food.calorie}</td> <td> {dailyIntake.food.fat} </td> 
                   <td> {dailyIntake.food.carbs}</td> 
                   <td> {dailyIntake.food.protein}</td> 
@@ -59,6 +61,7 @@ class DailyIntake extends Component {
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id}>
                   <td> {dailyIntake.food.name }</td>
+                  <td>{dailyIntake.serving}</td>
                   <td> {dailyIntake.food.calorie}</td> 
                   <td> {dailyIntake.food.fat} </td> 
                   <td> {dailyIntake.food.carbs}</td> 
@@ -78,6 +81,7 @@ class DailyIntake extends Component {
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id}>
                 <td> {dailyIntake.food.name }</td> 
+                <td>{dailyIntake.serving}</td>
                 <td> {dailyIntake.food.calorie}</td> 
                 <td> {dailyIntake.food.fat} </td> 
                 <td> {dailyIntake.food.carbs}</td> 
@@ -98,8 +102,9 @@ class DailyIntake extends Component {
     <thead>
      <tr>
         <th width="10%"></th> 
+        <th width="10%">Serving</th>
         <th width="10%">Calorie</th> 
-
+       
         <th width="10%">Fat</th>
         <th width="10%">Carbs</th>
         <th width="10%">Protein</th>
@@ -137,6 +142,17 @@ class DailyIntake extends Component {
       {snacks()} 
        <tr>
     <td>Total </td>
+    </tr>
+    <tr>
+      <th>
+        General Total
+      </th>
+        <td>{current_user.total_servings}</td>
+        <td>{current_user.total_calories}</td>
+        <td>{current_user.total_fat}</td>
+        <td>{current_user.total_carbs}</td>
+        <td>{current_user.total_protein}</td>
+        <td>{current_user.total_sugar}</td>
     </tr>
     </tbody>
  </table>
