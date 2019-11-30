@@ -3,20 +3,30 @@ import { connect } from 'react-redux'
 
 class DailyIntake extends Component {
  state = {
-     userIntake: this.props.current_user.daily_intakes
+   
  }
 
- render() {
-     console.log(this.props.current_user.daily_intakes)
-    //  console.log(this.state.breakfast)
 
+
+ 
+ render() {
+    
+     console.log(this.props.current_user.daily_intakes)
+
+    
     const breakfast = () => {
         if(this.props.current_user.id && this.props.current_user.daily_intakes) {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'breakfast'
             }) 
             return arr.map(dailyIntake => {
-                return  <tr><td key={dailyIntake.food.id}> {dailyIntake.food.name }</td> <td> {dailyIntake.food.calorie}</td> <td> {dailyIntake.food.fat} </td> <td> {dailyIntake.food.carbs}</td> <td> {dailyIntake.food.protein}</td> <td> {dailyIntake.food.sugar}</td>
+                return  <tr key={dailyIntake.food.id}>
+                  <td > {dailyIntake.food.name }</td> 
+                  <td> {dailyIntake.food.calorie}</td> 
+                  <td> {dailyIntake.food.fat} </td> 
+                  <td> {dailyIntake.food.carbs}</td> 
+                  <td>{dailyIntake.food.protein}</td> 
+                  <td> {dailyIntake.food.sugar}</td>
                   </tr>
              })
            }
@@ -29,7 +39,12 @@ class DailyIntake extends Component {
                 return dailyIntake.meal_type === 'lunch'
             }) 
             return arr.map(dailyIntake => {
-                return  <tr><td key={dailyIntake.food.id}> {dailyIntake.food.name }</td> <td> {dailyIntake.food.calorie}</td> <td> {dailyIntake.food.fat} </td> <td> {dailyIntake.food.carbs}</td> <td> {dailyIntake.food.protein}</td> <td> {dailyIntake.food.sugar}</td>
+                return  <tr key={dailyIntake.food.id}>
+                  <td> {dailyIntake.food.name }</td> 
+                  <td> {dailyIntake.food.calorie}</td> <td> {dailyIntake.food.fat} </td> 
+                  <td> {dailyIntake.food.carbs}</td> 
+                  <td> {dailyIntake.food.protein}</td> 
+                  <td> {dailyIntake.food.sugar}</td>
                 </tr>
              })
            }
@@ -42,7 +57,13 @@ class DailyIntake extends Component {
                 return dailyIntake.meal_type === 'dinner'
             }) 
             return arr.map(dailyIntake => {
-                return  <tr><td key={dailyIntake.food.id}> {dailyIntake.food.name }</td> <td> {dailyIntake.food.calorie}</td> <td> {dailyIntake.food.fat} </td> <td> {dailyIntake.food.carbs}</td> <td> {dailyIntake.food.protein}</td> <td> {dailyIntake.food.sugar}</td>
+                return  <tr key={dailyIntake.food.id}>
+                  <td> {dailyIntake.food.name }</td>
+                  <td> {dailyIntake.food.calorie}</td> 
+                  <td> {dailyIntake.food.fat} </td> 
+                  <td> {dailyIntake.food.carbs}</td> 
+                  <td> {dailyIntake.food.protein}</td> 
+                  <td> {dailyIntake.food.sugar}</td>
                 </tr>
              })
            }
@@ -55,7 +76,13 @@ class DailyIntake extends Component {
                 return dailyIntake.meal_type === 'snack'
             }) 
             return arr.map(dailyIntake => {
-                return  <tr><td key={dailyIntake.food.id}> {dailyIntake.food.name }</td> <td> {dailyIntake.food.calorie}</td> <td> {dailyIntake.food.fat} </td> <td> {dailyIntake.food.carbs}</td> <td> {dailyIntake.food.protein}</td> <td> {dailyIntake.food.sugar}</td>
+                return  <tr key={dailyIntake.food.id}>
+                <td> {dailyIntake.food.name }</td> 
+                <td> {dailyIntake.food.calorie}</td> 
+                <td> {dailyIntake.food.fat} </td> 
+                <td> {dailyIntake.food.carbs}</td> 
+                <td> {dailyIntake.food.protein}</td> 
+                <td> {dailyIntake.food.sugar}</td>
                 </tr>
              })
            }

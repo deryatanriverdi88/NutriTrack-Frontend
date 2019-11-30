@@ -17,7 +17,7 @@ class FoodForm extends Component {
     }
 
     handleChange = (e) => {
-        // console.log('handle change', e.target.value)
+        console.log(e.target.name, e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -47,7 +47,7 @@ class FoodForm extends Component {
                 serving: this.state.serving
 
             })
-        }).then(res => res.json())
+        })
         .then( this.props.history.push('/daily-intake'))
         
     }
@@ -56,7 +56,7 @@ class FoodForm extends Component {
 
         // console.log(this.props.history)
    
-        // console.log(this.state)
+        console.log(this.state.serving)
         const {name} = this.props.food
         return(
             <div> 
@@ -71,6 +71,7 @@ class FoodForm extends Component {
                                 name="serving"
                                 type="number"
                                 onChange={this.handleChange}
+                                value={this.state.serving}
                             />
                             <input
                                 type="hidden" 
@@ -95,7 +96,7 @@ class FoodForm extends Component {
                                 <option value="dinner">Dinner</option>
                                 <option value="snack">Snack</option>
                            </select>
-                           <input type="submit" value="Add to your dairy!" />
+                           <input type="submit" value="Add to your diary!" />
                      </form>
                     <button onClick={this.props.handleClick}> <span> ❌ </span></button>
                     <button onClick={() => this.handleClick(this.props.food)}> See nutrition info </button>
