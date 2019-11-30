@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import FoodItem from "../Pages/FoodItem"
 
 
 
@@ -9,13 +10,22 @@ class FoodForm extends Component {
    
     state={
         serving: null,
-        mealType: ""
+        mealType: "",
+        foodView: false,
+        food: {}
     }
 
     handleChange = (e) => {
         // console.log('handle change', e.target.value)
         this.setState({
             [e.target.name]: e.target.value
+        })
+    }
+
+    handleClick = (foodItem) => {
+        this.setState({
+            foodView: !this.state.foodView, 
+            food: foodItem
         })
     }
 
@@ -89,7 +99,12 @@ class FoodForm extends Component {
                            <input type="submit" value="Add to your dairy!" />
                      </form>
                     <button onClick={this.props.handleClick}> ❌</button>
-                 
+                    <button onClick={() => this.handleClick(this.props.food)}> See nutrition info </button>
+                    {
+                        this.state.foodView ? 
+                        <FoodItem food={this.state.food} handleClick={this.handleClick} /> : 
+                        null
+                    }
             
             </div>
            )
