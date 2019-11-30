@@ -20,6 +20,7 @@ function Nav(props){
        <Link to="/">Home</Link>
        <Link to="/profile">Profile</Link>
        <Link to="/daily-intake">My daily intake</Link>
+       <Link to='/add-food'>Add Food</Link>
        <NavLink to='/login'><button onClick={props.clearUser}>Logout</button></NavLink>
        </> : 
        <>
