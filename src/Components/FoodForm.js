@@ -51,7 +51,8 @@ class FoodForm extends Component {
         .then( this.props.history.push('/daily-intake'))
         
     }
-    
+
+
     render() {
 
         // console.log(this.props.history)
@@ -82,11 +83,6 @@ class FoodForm extends Component {
                                 type="hidden" 
                                 id="food"
                                 name="foodId"
-                            />
-                            <input
-                                type="hidden" 
-                                id="mealType"
-                                name="mealType"
                             />
                          <label htmlFor="mealType"> Meal Type </label>
                            <select id="mealType" name="mealType" onChange={this.handleChange}>

@@ -34,6 +34,21 @@ class AddFood extends Component {
         this.props.getFoods(foodsData)
     })
 }
+
+
+//  searchedFoods = () =>{
+//    if ( this.props.foods ) {
+//        return this.props.foods.filter(food => {
+//            if(this.state.searchValue !== ""){
+//                return food.name.toLowerCase().includes(this.state.searchValue.toLocaleLowerCase())
+//            }
+//        })
+//    } else {
+//        return  <> <p>No food</p></>
+//    }
+//  }
+
+
  render() {
 
 // console.log(this.state.foodView, this.state.food)
@@ -41,7 +56,8 @@ class AddFood extends Component {
 // console.log(this.props.foods)
 // console.log(this.props)
 
-   const searchedFoods = this.props.foods.filter(food => {
+   const searchedFoods = 
+        this.props.foods.filter(food => {
     //    debugger
          if (this.state.searchValue !== ""){
             return food.name.toLowerCase().includes(this.state.searchValue.toLowerCase())
@@ -63,12 +79,12 @@ class AddFood extends Component {
        <ul>
 
 
-            {
+            {    this.props.foods ?
                 searchedFoods.map(food => {
                     return <li key={food.id} onClick={() => this.handleClick(food)}>
                         {food.name}
                     </li>
-                })
+                }) : "Foods are loading..."
             }
             
        </ul>

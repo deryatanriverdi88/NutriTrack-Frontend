@@ -1,6 +1,6 @@
 import React  from 'react'
 import { useSelector } from 'react-redux'
-import DailySummary from './DailySummary'
+import DailySummary from '../Components/DailySummary'
 
 function  Home(){
 

@@ -25,7 +25,7 @@ class Edit extends Component {
     })
   }
 
-  handleLoginSubmit = (event) => {
+  handleEditSubmit = (event) => {
     // debugger
     event.preventDefault()
    //  debugger
@@ -80,7 +80,7 @@ class Edit extends Component {
      
         <div>
        Edit Form
-    <form onSubmit={this.handleLoginSubmit}>
+    <form onSubmit={this.handleEditSubmit}>
     <label htmlFor="name">
       Name :
        <input 
