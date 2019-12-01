@@ -37,7 +37,7 @@ class App  extends React.Component{
   return (
      <>
         <Nav clearUser={this.logOut}/>
-        <Routes logOut={this.logOut}/>
+        <Routes logOut={this.logOut} />
     </>
     )
    }

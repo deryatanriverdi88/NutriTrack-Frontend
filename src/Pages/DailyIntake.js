@@ -3,35 +3,34 @@ import { connect } from 'react-redux'
 
 class DailyIntake extends Component {
  state = {
-   dailyIntakeId: null,
-   show: true
-
+   
  }
 
-handleClick = (e, dailyIntakeItem) => {
-  console.log(dailyIntakeItem.id)
-  this.setState({
-    show: false,
-    dailyIntakeId: dailyIntakeItem.id
-  })
-  fetch(`http://localhost:3000/daily_intakes/${dailyIntakeItem.id}`, {
-     method: 'DELETE'
-   })
-}
+
+// handleClick = (e, dailyIntakeItem) => {
+//   console.log(dailyIntakeItem.id)
+//   this.setState({
+//     show: false
+//   })
+//   fetch(`http://localhost:3000/daily_intakes/${dailyIntakeItem.id}`, {
+//      method: 'DELETE'
+//    })
+// }
 
  
  render() {
-    
-     console.log(this.state.dailyIntake)
+  //  console.log(this.props.current_user.daily_intakes)
+  //  console.log(this.state.dailyIntakes)
+  // console.log(this.state.dailyIntake)
    const  {current_user} =this.props
 
     const breakfast = () => {
-        if(this.props.current_user.id && this.props.current_user.daily_intakes && this.state.show) {
+        if(this.props.current_user.id && this.props.current_user.daily_intakes ) {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'breakfast'
             }) 
             return arr.map(dailyIntake => {
-                return  <tr key={dailyIntake.food.id}>
+                return  <tr key={dailyIntake.food.id} >
                   <td > {dailyIntake.food.name }</td> 
                   <td>{dailyIntake.serving}</td>
                   <td> {dailyIntake.food.calorie}</td> 
@@ -39,7 +38,7 @@ handleClick = (e, dailyIntakeItem) => {
                   <td> {dailyIntake.food.carbs}</td> 
                   <td>{dailyIntake.food.protein}</td> 
                   <td> {dailyIntake.food.sugar}</td>
-                  <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td>
+                  {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                   </tr>
              })
            }
@@ -47,7 +46,7 @@ handleClick = (e, dailyIntakeItem) => {
         }
 
     const lunch = () => {
-        if(this.props.current_user.id && this.props.current_user.daily_intakes) {
+        if(this.props.current_user.id && this.props.current_user.daily_intakes ) {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'lunch'
             }) 
@@ -59,7 +58,7 @@ handleClick = (e, dailyIntakeItem) => {
                   <td> {dailyIntake.food.carbs}</td> 
                   <td> {dailyIntake.food.protein}</td> 
                   <td> {dailyIntake.food.sugar}</td>
-                  <td onClick={() => this.handleClick(dailyIntake)}> <span> ❌ </span> </td>
+                  {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 </tr>
              })
            }
@@ -67,13 +66,13 @@ handleClick = (e, dailyIntakeItem) => {
         }
 
     const dinner = () => {
-        if(this.props.current_user.id && this.props.current_user.daily_intakes)  {
+        if(this.props.current_user.id && this.props.current_user.daily_intakes )  {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'dinner'
 
             }) 
             return arr.map(dailyIntake => {
-                return  <tr key={dailyIntake.food.id}>
+                return  <tr key={dailyIntake.food.id} >
                   <td> {dailyIntake.food.name }</td>
                   <td>{dailyIntake.serving}</td>
                   <td> {dailyIntake.food.calorie}</td> 
@@ -81,7 +80,7 @@ handleClick = (e, dailyIntakeItem) => {
                   <td> {dailyIntake.food.carbs}</td> 
                   <td> {dailyIntake.food.protein}</td> 
                   <td> {dailyIntake.food.sugar}</td>
-                  <td onClick={(e) => this.handleClick(e,dailyIntake)}> X </td>
+                  {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 
                 </tr>
               
@@ -91,12 +90,12 @@ handleClick = (e, dailyIntakeItem) => {
         }
 
     const snacks = () => {
-        if(this.props.current_user.id && this.props.current_user.daily_intakes) {
+        if(this.props.current_user.id && this.props.current_user.daily_intakes ) {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'snack'
             }) 
             return arr.map(dailyIntake => {
-                return  <tr key={dailyIntake.food.id}>
+                return  <tr key={dailyIntake.food.id} >
                 <td> {dailyIntake.food.name }</td> 
                 <td>{dailyIntake.serving}</td>
                 <td> {dailyIntake.food.calorie}</td> 
@@ -104,7 +103,7 @@ handleClick = (e, dailyIntakeItem) => {
                 <td> {dailyIntake.food.carbs}</td> 
                 <td> {dailyIntake.food.protein}</td> 
                 <td> {dailyIntake.food.sugar}</td>
-                <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td>
+                {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 </tr>
              })
            }
@@ -127,7 +126,7 @@ handleClick = (e, dailyIntakeItem) => {
         <th width="10%">Carbs ( g )</th>
         <th width="10%">Protein ( g )</th>
         <th width="10%">Sugar ( g )</th>
-        <th width="10%"></th>
+       
      </tr>
     </thead>
     <tbody>
