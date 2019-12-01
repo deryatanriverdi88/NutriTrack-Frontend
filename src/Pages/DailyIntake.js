@@ -32,12 +32,12 @@ class DailyIntake extends Component {
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id} >
                   <td > {dailyIntake.food.name }</td> 
-                  <td>{dailyIntake.serving}</td>
-                  <td> {dailyIntake.food.calorie}</td> 
-                  <td> {dailyIntake.food.fat} </td> 
-                  <td> {dailyIntake.food.carbs}</td> 
-                  <td>{dailyIntake.food.protein}</td> 
-                  <td> {dailyIntake.food.sugar}</td>
+                  <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
+                  <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.fat * dailyIntake.serving} </td> 
+                  <td> {dailyIntake.food.carbs * dailyIntake.serving}</td> 
+                  <td>{dailyIntake.food.protein * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.sugar * dailyIntake.serving}</td>
                   {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                   </tr>
              })
@@ -53,11 +53,12 @@ class DailyIntake extends Component {
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id}>
                   <td> {dailyIntake.food.name }</td> 
-                  <td>{dailyIntake.serving}</td>
-                  <td> {dailyIntake.food.calorie}</td> <td> {dailyIntake.food.fat} </td> 
-                  <td> {dailyIntake.food.carbs}</td> 
-                  <td> {dailyIntake.food.protein}</td> 
-                  <td> {dailyIntake.food.sugar}</td>
+                  <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
+                  <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.fat * dailyIntake.serving} </td> 
+                  <td> {dailyIntake.food.carbs * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.protein * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.sugar * dailyIntake.serving}</td>
                   {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 </tr>
              })
@@ -74,12 +75,12 @@ class DailyIntake extends Component {
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id} >
                   <td> {dailyIntake.food.name }</td>
-                  <td>{dailyIntake.serving}</td>
-                  <td> {dailyIntake.food.calorie}</td> 
-                  <td> {dailyIntake.food.fat} </td> 
-                  <td> {dailyIntake.food.carbs}</td> 
-                  <td> {dailyIntake.food.protein}</td> 
-                  <td> {dailyIntake.food.sugar}</td>
+            <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
+                  <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.fat * dailyIntake.serving} </td> 
+                  <td> {dailyIntake.food.carbs * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.protein * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.sugar * dailyIntake.serving}</td>
                   {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 
                 </tr>
@@ -96,13 +97,13 @@ class DailyIntake extends Component {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id} >
-                <td> {dailyIntake.food.name }</td> 
-                <td>{dailyIntake.serving}</td>
-                <td> {dailyIntake.food.calorie}</td> 
-                <td> {dailyIntake.food.fat} </td> 
-                <td> {dailyIntake.food.carbs}</td> 
-                <td> {dailyIntake.food.protein}</td> 
-                <td> {dailyIntake.food.sugar}</td>
+                <td> {dailyIntake.food.name } </td> 
+                <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
+                <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                <td> {dailyIntake.food.fat * dailyIntake.serving} </td> 
+                <td> {dailyIntake.food.carbs * dailyIntake.serving}</td> 
+                <td> {dailyIntake.food.protein * dailyIntake.serving}</td> 
+                <td> {dailyIntake.food.sugar * dailyIntake.serving}</td>
                 {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 </tr>
              })
