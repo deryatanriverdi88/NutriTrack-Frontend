@@ -22,10 +22,9 @@ class DailyIntake extends Component {
 //    })
 // }
 
- 
 
 handleClick = (e, dailyIntakeItem) => {
- console.log(dailyIntakeItem)
+//  console.log(dailyIntakeItem)
  this.setState({
    editForm: !this.state.editForm,
    dailyIntake: dailyIntakeItem,
@@ -36,7 +35,7 @@ handleClick = (e, dailyIntakeItem) => {
 
 
 handleChange = (e) =>{
-  console.log(e.target.value)
+  // console.log(e.target.value)
   this.setState({
     [e.target.name] : e.target.value
   })
@@ -44,9 +43,7 @@ handleChange = (e) =>{
 
 handleEditSubmit = (e) => {
   e.preventDefault()
-  console.log('submit')
-
-
+  // console.log('submit')
   fetch(`http://localhost:3000/daily_intakes/${this.state.dailyIntake.id}`, {
     method: 'PATCH', 
     headers: {
@@ -58,18 +55,14 @@ handleEditSubmit = (e) => {
      serving: this.state.serving
     })
   })
-  .then(res => res.json())
-  .then(editedDailyIntake => {
-    console.log(editedDailyIntake)
-  })
 } 
 
  render() {
   //  console.log(this.props.current_user.daily_intakes)
   //  console.log(this.state.dailyIntakes)
   // console.log(this.state.dailyIntake)
-  console.log(this.state.dailyIntake)
-  console.log(this.state.mealType, this.state.serving)
+  // console.log(this.state.dailyIntake)
+  // console.log(this.state.mealType, this.state.serving)
    const  {current_user} =this.props
 
     const breakfast = () => {
@@ -79,13 +72,13 @@ handleEditSubmit = (e) => {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id} >
-                  <td onClick={(e) => this.handleClick(e, dailyIntake)}> {dailyIntake.food.name }</td> 
+                  <td> {dailyIntake.food.name } <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
                   <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
-                  <td> {dailyIntake.food.calorie.toFixed() * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.fat.toFixed() * dailyIntake.serving} </td> 
-                  <td> {dailyIntake.food.carbs.toFixed() * dailyIntake.serving}</td> 
-                  <td>{dailyIntake.food.protein.toFixed() * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.sugar.toFixed() * dailyIntake.serving}</td>
+                  <td> {dailyIntake.food.calorie.toFixed(2) * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.fat.toFixed(2) * dailyIntake.serving} </td> 
+                  <td> {dailyIntake.food.carbs.toFixed(2) * dailyIntake.serving}</td> 
+                  <td>{dailyIntake.food.protein.toFixed(2) * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.sugar.toFixed(2) * dailyIntake.serving}</td>
                   {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                   </tr>
              })
@@ -100,13 +93,13 @@ handleEditSubmit = (e) => {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id}>
-                  <td onClick={(e) => this.handleClick(e, dailyIntake)}> {dailyIntake.food.name } </td> 
+                  <td>  {dailyIntake.food.name } <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
                   <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
-                  <td> {dailyIntake.food.calorie.toFixed() * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.fat.toFixed() * dailyIntake.serving} </td> 
-                  <td> {dailyIntake.food.carbs.toFixed() * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.protein.toFixed() * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.sugar.toFixed() * dailyIntake.serving}</td>
+                  <td> {dailyIntake.food.calorie.toFixed(2) * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.fat.toFixed(2) * dailyIntake.serving} </td> 
+                  <td> {dailyIntake.food.carbs.toFixed(2) * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.protein.toFixed(2) * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.sugar.toFixed(2) * dailyIntake.serving}</td>
                   {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 </tr>
              })
@@ -122,13 +115,13 @@ handleEditSubmit = (e) => {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id} >
-                  <td onClick={(e) => this.handleClick(e, dailyIntake)}> {dailyIntake.food.name } </td>
+                  <td> {dailyIntake.food.name } <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button> </td>
             <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
                   <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.fat * dailyIntake.serving} </td> 
-                  <td> {dailyIntake.food.carbs * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.protein * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.sugar * dailyIntake.serving}</td>
+                  <td> {dailyIntake.food.fat.toFixed(2) * dailyIntake.serving} </td> 
+                  <td> {dailyIntake.food.carbs.toFixed(2) * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.protein.toFixed(2) * dailyIntake.serving}</td> 
+                  <td> {dailyIntake.food.sugar.toFixed(2) * dailyIntake.serving}</td>
                   {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 
                 </tr>
@@ -145,13 +138,13 @@ handleEditSubmit = (e) => {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id} >
-                <td onClick={(e) => this.handleClick(e, dailyIntake)}> {dailyIntake.food.name }  </td> 
+                <td> {dailyIntake.food.name } <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
                 <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
-                <td> {dailyIntake.food.calorie .toFixed()* dailyIntake.serving}</td> 
-                <td> {dailyIntake.food.fat.toFixed() * dailyIntake.serving} </td> 
-                <td> {dailyIntake.food.carbs.toFixed() * dailyIntake.serving}</td> 
-                <td> {dailyIntake.food.protein.toFixed() * dailyIntake.serving}</td> 
-                <td> {dailyIntake.food.sugar.toFixed()* dailyIntake.serving}</td>
+                <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                <td> {dailyIntake.food.fat.toFixed(2) * dailyIntake.serving} </td> 
+                <td> {dailyIntake.food.carbs.toFixed(2) * dailyIntake.serving}</td> 
+                <td> {dailyIntake.food.protein.toFixed(2) * dailyIntake.serving}</td> 
+                <td> {dailyIntake.food.sugar.toFixed(2)* dailyIntake.serving}</td>
                 {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 </tr>
              })
