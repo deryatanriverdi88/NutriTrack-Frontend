@@ -26,7 +26,7 @@ const deleteUser = () => {
 
 if(current_user.id) {
 
-  const {username, name, age, weight, height, goal_calorie, gender, image} = current_user
+  const {username, name, age, weight, height, goal_calorie, gender, image, goal_carbs, goal_fat, goal_protein, goal_sugar} = current_user
   return(
     
     <div> 
@@ -40,6 +40,10 @@ if(current_user.id) {
          <li>Height : {height} </li>
          <li>Weight : {weight} </li>
          <li>Daily calorie goal : {goal_calorie} </li> 
+         <li>Daily carbs goal : {goal_carbs}</li>
+         <li>Daily fat goal : {goal_fat}</li>
+         <li>Daily protein goal : {goal_protein}</li>
+         <li>Daily sugar goal : {goal_sugar}</li>
          <Link to="/edit"> Edit Profile!</Link>
          <Link to='/login' onClick={deleteUser}>Delete Profile</Link>
     

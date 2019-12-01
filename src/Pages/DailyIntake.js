@@ -103,12 +103,12 @@ class DailyIntake extends Component {
      <tr>
         <th width="10%"></th> 
         <th width="10%">Serving</th>
-        <th width="10%">Calorie</th> 
+        <th width="10%">Calorie ( kcal )</th> 
        
-        <th width="10%">Fat</th>
-        <th width="10%">Carbs</th>
-        <th width="10%">Protein</th>
-        <th width="10%">Sugar</th>
+        <th width="10%">Fat ( g )</th>
+        <th width="10%">Carbs ( g )</th>
+        <th width="10%">Protein ( g )</th>
+        <th width="10%">Sugar ( g )</th>
      </tr>
     </thead>
     <tbody>
@@ -117,35 +117,25 @@ class DailyIntake extends Component {
       <th width="10%">Breakfast</th>
     </tr> 
       {breakfast()}
-    <tr>
-    <td>Total </td>
-    </tr>
+  
       
     <tr>
       <th width="10%">Lunch</th> 
     </tr>
      {lunch()}
-
-     <tr>
-    <td>Total </td>
-    </tr>
     <tr>
       <th width="10%">Dinner</th> 
     </tr>
      {dinner()}
-     <tr>
-    <td>Total </td>
-    </tr>
+  
     <tr>
       <th width="10%">Snack</th> 
     </tr>
       {snacks()} 
-       <tr>
-    <td>Total </td>
-    </tr>
+     
     <tr>
       <th>
-        General Total
+        Total
       </th>
         <td>{current_user.total_servings}</td>
         <td>{current_user.total_calories}</td>
@@ -153,6 +143,11 @@ class DailyIntake extends Component {
         <td>{current_user.total_carbs}</td>
         <td>{current_user.total_protein}</td>
         <td>{current_user.total_sugar}</td>
+    </tr>
+    <tr>
+      <th>Your daily goal : </th>
+      <td></td>
+      <td>{current_user.goal_calorie}</td>
     </tr>
     </tbody>
  </table>

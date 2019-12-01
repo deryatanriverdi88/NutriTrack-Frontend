@@ -43,7 +43,11 @@ class Edit extends Component {
         weight: this.state.weight,
         height: this.state.height,
         goal_calorie: this.state.goalCalorie,
-        image: this.state.image
+        image: this.state.image,
+        goal_carbs: this.state.goalCarbs,
+        goal_fat: this.state.goalFat,
+        goal_sugar: this.state.goalSugar,
+        goal_protein: this.state.goalSugar
       })
     })
     .then(res => res.json())
@@ -66,9 +70,9 @@ class Edit extends Component {
  render(){
     // console.log("state ------", this.state)
     //  console.log(this.props.current_user)
-    // console.log(this.state)
-  const {name, username, age, weight, height, goalCalorie} = this.state
-  console.log(name, this.state.goalCalorie)
+   
+  const {name, username, age, weight, height, goalCalorie, goalCarbs, goalFat, goalSugar, goalProtein, image} = this.state
+  console.log(name, goalCalorie)
   return(
       <>
        
@@ -113,7 +117,7 @@ class Edit extends Component {
         <input 
           id="image"
           name="image"
-          value={this.state.image}
+          value={image}
           type="text"
           onChange={this.handleChange}
         />
@@ -158,6 +162,51 @@ class Edit extends Component {
          onChange={this.handleChange}
        />
     </label>
+
+    <label htmlFor="goalCarbs" >
+      Daily carbs goal : 
+       <input 
+         id="goalCarbs"
+         name="goalCarbs"
+         value={goalCarbs}
+         type="float"
+         onChange={this.handleChange}
+       />
+    </label>
+
+    <label htmlFor="goalFat" >
+      Daily fat goal : 
+       <input 
+         id="goalFat"
+         name="goalFat"
+         value={goalFat}
+         type="float"
+         onChange={this.handleChange}
+       />
+    </label>
+   
+    <label htmlFor="goalSugar" >
+      Daily sugar goal : 
+       <input 
+         id="goalSugar"
+         name="goalSugar"
+         value={goalSugar}
+         type="float"
+         onChange={this.handleChange}
+       />
+    </label>
+
+    <label htmlFor="goalProtein" >
+      Daily protein goal : 
+       <input 
+         id="goalProtein"
+         name="goalProtein"
+         value={goalProtein}
+         type="float"
+         onChange={this.handleChange}
+       />
+    </label>
+    
   
     <input type="submit"/>
     </form>
