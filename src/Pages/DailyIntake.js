@@ -3,19 +3,30 @@ import { connect } from 'react-redux'
 
 class DailyIntake extends Component {
  state = {
-   
+   dailyIntakeId: null,
+   show: true
+
  }
 
-
+handleClick = (e, dailyIntakeItem) => {
+  console.log(dailyIntakeItem.id)
+  this.setState({
+    show: false,
+    dailyIntakeId: dailyIntakeItem.id
+  })
+  fetch(`http://localhost:3000/daily_intakes/${dailyIntakeItem.id}`, {
+     method: 'DELETE'
+   })
+}
 
  
  render() {
     
-     console.log(this.props.current_user.daily_intakes)
+     console.log(this.state.dailyIntake)
    const  {current_user} =this.props
 
     const breakfast = () => {
-        if(this.props.current_user.id && this.props.current_user.daily_intakes) {
+        if(this.props.current_user.id && this.props.current_user.daily_intakes && this.state.show) {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'breakfast'
             }) 
@@ -28,14 +39,15 @@ class DailyIntake extends Component {
                   <td> {dailyIntake.food.carbs}</td> 
                   <td>{dailyIntake.food.protein}</td> 
                   <td> {dailyIntake.food.sugar}</td>
+                  <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td>
                   </tr>
              })
            }
-           return "nope!"
+           return "There is no food logged in.."
         }
 
     const lunch = () => {
-        if(this.props.current_user.id) {
+        if(this.props.current_user.id && this.props.current_user.daily_intakes) {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'lunch'
             }) 
@@ -47,16 +59,18 @@ class DailyIntake extends Component {
                   <td> {dailyIntake.food.carbs}</td> 
                   <td> {dailyIntake.food.protein}</td> 
                   <td> {dailyIntake.food.sugar}</td>
+                  <td onClick={() => this.handleClick(dailyIntake)}> <span> ❌ </span> </td>
                 </tr>
              })
            }
-           return "nope!"
+           return "There is no food logged in.."
         }
 
     const dinner = () => {
-        if(this.props.current_user.id) {
+        if(this.props.current_user.id && this.props.current_user.daily_intakes)  {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'dinner'
+
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id}>
@@ -67,14 +81,17 @@ class DailyIntake extends Component {
                   <td> {dailyIntake.food.carbs}</td> 
                   <td> {dailyIntake.food.protein}</td> 
                   <td> {dailyIntake.food.sugar}</td>
+                  <td onClick={(e) => this.handleClick(e,dailyIntake)}> X </td>
+                
                 </tr>
+              
              })
            }
-           return "nope!"
+           return "There is no food logged in.."
         }
 
     const snacks = () => {
-        if(this.props.current_user.id) {
+        if(this.props.current_user.id && this.props.current_user.daily_intakes) {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'snack'
             }) 
@@ -87,10 +104,11 @@ class DailyIntake extends Component {
                 <td> {dailyIntake.food.carbs}</td> 
                 <td> {dailyIntake.food.protein}</td> 
                 <td> {dailyIntake.food.sugar}</td>
+                <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td>
                 </tr>
              })
            }
-           return "nope!"
+           return "There is no food logged in.."
         }
     
         
@@ -109,6 +127,7 @@ class DailyIntake extends Component {
         <th width="10%">Carbs ( g )</th>
         <th width="10%">Protein ( g )</th>
         <th width="10%">Sugar ( g )</th>
+        <th width="10%"></th>
      </tr>
     </thead>
     <tbody>
@@ -117,7 +136,6 @@ class DailyIntake extends Component {
       <th width="10%">Breakfast</th>
     </tr> 
       {breakfast()}
-  
       
     <tr>
       <th width="10%">Lunch</th> 
@@ -145,6 +163,7 @@ class DailyIntake extends Component {
         <td>{current_user.total_carbs}</td>
         <td>{current_user.total_protein}</td>
         <td>{current_user.total_sugar}</td>
+        
     </tr>
     <tr>
       <th>Your daily goal  </th>

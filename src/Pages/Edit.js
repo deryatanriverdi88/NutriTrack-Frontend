@@ -47,7 +47,7 @@ class Edit extends Component {
         goal_carbs: this.state.goalCarbs,
         goal_fat: this.state.goalFat,
         goal_sugar: this.state.goalSugar,
-        goal_protein: this.state.goalSugar
+        goal_protein: this.state.goalProtein
       })
     })
     .then(res => res.json())
