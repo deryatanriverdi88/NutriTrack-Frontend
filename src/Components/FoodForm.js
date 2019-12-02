@@ -12,6 +12,7 @@ class FoodForm extends Component {
     state={
         serving: null,
         mealType: "",
+        date: '',
         foodView: false,
         food: {}
     }
@@ -44,7 +45,8 @@ class FoodForm extends Component {
                 user_id: this.props.current_user.id,
                 food_id: this.props.food.id,
                 meal_type: this.state.mealType,
-                serving: this.state.serving
+                serving: this.state.serving,
+                date: this.state.date
 
             })
         })
@@ -88,6 +90,15 @@ class FoodForm extends Component {
                                 id="food"
                                 name="foodId"
                             />
+                        <label htmlFor="date">
+                             <input 
+                                type="date"
+                                id="date"
+                                name='date'
+                                value={this.state.date}
+                                onChange={this.handleChange}
+                             />
+                        </label>
                          <label htmlFor="mealType"> Meal Type </label>
                            <select id="mealType" name="mealType" onChange={this.handleChange}>
                                 <option name=""></option>
