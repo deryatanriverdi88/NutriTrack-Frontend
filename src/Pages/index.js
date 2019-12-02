@@ -6,6 +6,7 @@ import Edit from './Edit'
 import AddFood from './AddFood'
 import FoodItem from './FoodItem'
 import DailyIntake from './DailyIntake'
+import Test from './Test'
 
 
 export default {
@@ -15,5 +16,6 @@ export default {
     Edit,
     AddFood, 
     FoodItem,
-    DailyIntake
+    DailyIntake,
+    Test
 }
