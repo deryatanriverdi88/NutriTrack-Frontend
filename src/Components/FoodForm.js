@@ -48,6 +48,10 @@ class FoodForm extends Component {
 
             })
         })
+        .then(res => res.json())
+        .then(user => {
+            this.props.setUser(user)
+        })
         .then( this.props.history.push('/daily-intake'))
         
     }
@@ -108,13 +112,28 @@ class FoodForm extends Component {
   
 
  }
- const mapStateToProps = (state) => {
+ const mapDispatchToProps = (dispatch) =>{
     return {
-      current_user: state.user
-    }
-  }
-  
- 
- export default withRouter(connect(mapStateToProps)(FoodForm))
+     setUser: (userObject) => {
+       dispatch({
+           type: 'SET_USER', payload: userObject
+         })
+     }, 
+     clearUser: () => {
+      dispatch({
+        type: 'CLEAR_USER'
+      })
+     }
+   }
+   }
+   
+   const mapStateToProps = (state) => {
+   return {
+     current_user: state.user
+   }
+   }
+   
+   
+   export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FoodForm))
 
 

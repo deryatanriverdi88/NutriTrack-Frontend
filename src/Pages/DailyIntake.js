@@ -55,6 +55,10 @@ handleEditSubmit = (e) => {
      serving: this.state.serving
     })
   })
+  .then(res => res.json())
+  .then(user => {
+    this.props.setUser(user)
+  })
 } 
 
  render() {
@@ -74,11 +78,11 @@ handleEditSubmit = (e) => {
                 return  <tr key={dailyIntake.food.id} >
                   <td> {dailyIntake.food.name } <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
                   <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
-                  <td> {dailyIntake.food.calorie.toFixed(2) * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.fat.toFixed(2) * dailyIntake.serving} </td> 
-                  <td> {dailyIntake.food.carbs.toFixed(2) * dailyIntake.serving}</td> 
-                  <td>{dailyIntake.food.protein.toFixed(2) * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.sugar.toFixed(2) * dailyIntake.serving}</td>
+                  <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                  <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
+                  <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
+                  <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
+                  <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
                   {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                   </tr>
              })
@@ -95,11 +99,11 @@ handleEditSubmit = (e) => {
                 return  <tr key={dailyIntake.food.id}>
                   <td>  {dailyIntake.food.name } <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
                   <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
-                  <td> {dailyIntake.food.calorie.toFixed(2) * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.fat.toFixed(2) * dailyIntake.serving} </td> 
-                  <td> {dailyIntake.food.carbs.toFixed(2) * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.protein.toFixed(2) * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.sugar.toFixed(2) * dailyIntake.serving}</td>
+                  <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                  <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
+                  <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
+                  <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
+                  <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
                   {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 </tr>
              })
@@ -118,10 +122,10 @@ handleEditSubmit = (e) => {
                   <td> {dailyIntake.food.name } <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button> </td>
             <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
                   <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.fat.toFixed(2) * dailyIntake.serving} </td> 
-                  <td> {dailyIntake.food.carbs.toFixed(2) * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.protein.toFixed(2) * dailyIntake.serving}</td> 
-                  <td> {dailyIntake.food.sugar.toFixed(2) * dailyIntake.serving}</td>
+                  <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
+                  <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
+                  <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
+                  <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
                   {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 
                 </tr>
@@ -136,15 +140,19 @@ handleEditSubmit = (e) => {
             let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'snack'
             }) 
+           
             return arr.map(dailyIntake => {
+              debugger
                 return  <tr key={dailyIntake.food.id} >
+                  
                 <td> {dailyIntake.food.name } <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
                 <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
                 <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
-                <td> {dailyIntake.food.fat.toFixed(2) * dailyIntake.serving} </td> 
-                <td> {dailyIntake.food.carbs.toFixed(2) * dailyIntake.serving}</td> 
-                <td> {dailyIntake.food.protein.toFixed(2) * dailyIntake.serving}</td> 
-                <td> {dailyIntake.food.sugar.toFixed(2)* dailyIntake.serving}</td>
+                <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
+                <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
+                <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
+                <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
+               
                 {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
                 </tr>
              })
@@ -231,11 +239,27 @@ handleEditSubmit = (e) => {
     )
    }
  }
- const mapStateToProps = (state) => {
-    return {
-      current_user: state.user
-    }
+
+ const mapDispatchToProps = (dispatch) =>{
+ return {
+  setUser: (userObject) => {
+    dispatch({
+        type: 'SET_USER', payload: userObject
+      })
+  }, 
+  clearUser: () => {
+   dispatch({
+     type: 'CLEAR_USER'
+   })
   }
-  
- 
- export default connect(mapStateToProps)(DailyIntake)
+}
+}
+
+const mapStateToProps = (state) => {
+return {
+  current_user: state.user
+}
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(DailyIntake)
