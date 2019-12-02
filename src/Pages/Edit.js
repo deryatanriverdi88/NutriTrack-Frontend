@@ -42,12 +42,12 @@ class Edit extends Component {
         age: this.state.age,
         weight: this.state.weight,
         height: this.state.height,
-        goal_calorie: this.state.goalCalorie,
+        goal_calorie: this.state.goal_calorie,
         image: this.state.image,
-        goal_carbs: this.state.goalCarbs,
-        goal_fat: this.state.goalFat,
-        goal_sugar: this.state.goalSugar,
-        goal_protein: this.state.goalProtein
+        goal_carbs: this.state.goal_carbs,
+        goal_fat: this.state.goal_fat,
+        goal_sugar: this.state.goal_sugar,
+        goal_protein: this.state.goal_protein
       })
     })
     .then(res => res.json())
@@ -71,8 +71,8 @@ class Edit extends Component {
     // console.log("state ------", this.state)
     //  console.log(this.props.current_user)
    
-  const {name, username, age, weight, height, goalCalorie, goalCarbs, goalFat, goalSugar, goalProtein, image} = this.state
-  console.log(name, goalCalorie)
+  const {name, username, age, weight, height, goal_calorie, goal_carbs, goal_fat, goal_sugar, goal_protein, image} = this.state
+  console.log(this.state)
   return(
       <>
        
@@ -156,8 +156,8 @@ class Edit extends Component {
       Daily goal calorie : 
        <input 
          id="goalCalorie"
-         name="goalCalorie"
-         value={goalCalorie}
+         name="goal_calorie"
+         value={goal_calorie}
          type="number"
          onChange={this.handleChange}
        />
@@ -167,8 +167,8 @@ class Edit extends Component {
       Daily carbs goal : 
        <input 
          id="goalCarbs"
-         name="goalCarbs"
-         value={goalCarbs}
+         name="goal_carbs"
+         value={goal_carbs}
          type="float"
          onChange={this.handleChange}
        />
@@ -177,9 +177,9 @@ class Edit extends Component {
     <label htmlFor="goalFat" >
       Daily fat goal : 
        <input 
-         id="goalFat"
-         name="goalFat"
-         value={goalFat}
+         id="goal_fat"
+         name="goal_fat"
+         value={goal_fat}
          type="float"
          onChange={this.handleChange}
        />
@@ -189,8 +189,8 @@ class Edit extends Component {
       Daily sugar goal : 
        <input 
          id="goalSugar"
-         name="goalSugar"
-         value={goalSugar}
+         name="goal_sugar"
+         value={goal_sugar}
          type="float"
          onChange={this.handleChange}
        />
@@ -200,8 +200,8 @@ class Edit extends Component {
       Daily protein goal : 
        <input 
          id="goalProtein"
-         name="goalProtein"
-         value={goalProtein}
+         name="goal_protein"
+         value={goal_protein}
          type="float"
          onChange={this.handleChange}
        />
