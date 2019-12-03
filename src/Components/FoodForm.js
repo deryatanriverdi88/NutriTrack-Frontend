@@ -52,9 +52,13 @@ class FoodForm extends Component {
         })
         .then(res => res.json())
         .then(user => {
+            console.log(user)
             this.props.setUser(user)
+            setTimeout(() => {
+                this.props.history.push('/daily-intake')
+            }, 100)
         })
-        .then( this.props.history.push('/daily-intake'))
+        // .then( this.props.history.push('/daily-intake'))
         
     }
 
