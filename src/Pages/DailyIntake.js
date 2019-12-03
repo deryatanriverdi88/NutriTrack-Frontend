@@ -33,30 +33,7 @@ handleClick = (e, dailyIntakeItem) => {
  })
 }
 
-componentDidMount(){
-  this.fetchDailyIntake ()
-}
 
-fetchDailyIntake =  () => {
-  fetch('http://localhost:3000/daily_intakes')
-  .then(res => res.json())
-  .then(dailyIntakeItems => {
-    console.log(dailyIntakeItems)
-    console.log(dailyIntakeItems[0].user.id)
-
-    if (this.props.current_user.id){
-      if(dailyIntakeItems[0].user.id === this.props.current_user.id){
-        const todayIntakes = dailyIntakeItems.filter(dailyIntakeItem => {
-          return  dailyIntakeItem.changed_date === new Date().toLocaleDateString()
-         
-        })
-        this.setState({
-          dailyIntakes: todayIntakes
-        })
-      }
-    }
-  })
-}
 
 handleChange = (e) =>{
   // console.log(e.target.value)
@@ -82,6 +59,17 @@ handleEditSubmit = (e) => {
   .then(res => res.json())
   .then(user => {
     this.props.setUser(user)
+    if (user.id){
+      if(user.daily_intakes.id === user.id){
+        const todayIntakes = user.daily_intakes.filter(dailyIntakeItem => {
+          return  dailyIntakeItem.changed_date === new Date().toLocaleDateString()
+         
+        })
+        this.setState({
+          dailyIntakes: todayIntakes
+        })
+      }
+    }
   })
 } 
 
@@ -95,7 +83,7 @@ handleEditSubmit = (e) => {
   //     })
   //   }
   // }) 
-     console.log(this.state.dailyIntakes)
+  // console.log(this.state.dailyIntakes)
   // console.log(this.props.current_user.daily_intakes)
   // console.log(this.state.dailyIntakes)
   // console.log(this.state.dailyIntake)
@@ -105,7 +93,7 @@ handleEditSubmit = (e) => {
 
     const breakfast = () => {
         if(this.props.current_user.id && this.state.dailyIntakes) {
-            let arr = this.state.dailyIntakes.filter(dailyIntake => {
+            let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'breakfast'
             }) 
             return arr.map(dailyIntake => {
