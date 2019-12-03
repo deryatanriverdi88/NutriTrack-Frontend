@@ -60,10 +60,10 @@ class FoodForm extends Component {
 
 
     render() {
-
-        // console.log(this.props.history)
+       
+        console.log(this.state.date)
    
-        console.log(this.state.serving)
+        // console.log(this.state.serving)
         const {name} = this.props.food
         return(
             <div> 
