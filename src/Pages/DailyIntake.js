@@ -1,3 +1,4 @@
+  
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import EditDailyIntake from '../Components/EditDailyIntake'
@@ -33,7 +34,29 @@ handleClick = (e, dailyIntakeItem) => {
  })
 }
 
+componentDidMount(){
+  this.fetchDailyIntake()
+}
 
+fetchDailyIntake =  () => {
+  const config = {
+    method: 'GET',
+    headers: {
+      Authorization: localStorage.token
+    }
+  }
+  fetch('http://localhost:3000/daily_intakes', config)
+  .then(res => res.json())
+  .then(dailyIntakeItems => {
+    console.log(dailyIntakeItems)
+   
+        this.setState({
+          dailyIntakes: dailyIntakeItems
+        }, () => console.log("state ----- ", this.state))
+      
+
+  })
+}
 
 handleChange = (e) =>{
   // console.log(e.target.value)
@@ -57,19 +80,15 @@ handleEditSubmit = (e) => {
     })
   })
   .then(res => res.json())
-  .then(user => {
-    this.props.setUser(user)
-    if (user.id){
-      if(user.daily_intakes.id === user.id){
-        const todayIntakes = user.daily_intakes.filter(dailyIntakeItem => {
-          return  dailyIntakeItem.changed_date === new Date().toLocaleDateString()
-         
-        })
-        this.setState({
-          dailyIntakes: todayIntakes
-        })
-      }
-    }
+  .then(intake => {
+    const newItem =  this.state.dailyIntakes.map(intakeItem => {
+        return intakeItem.id === intake.id ? intake : intakeItem
+    })
+    // this.props.setUser(user) 
+    this.setState({
+      dailyIntake:  intake,
+      dailyIntakes:  newItem
+    })
   })
 } 
 
@@ -82,8 +101,8 @@ handleEditSubmit = (e) => {
   //       return new Date(dailyIntake.date).toLocaleDateString()
   //     })
   //   }
-  // }) 
-  // console.log(this.state.dailyIntakes)
+  // })
+    
   // console.log(this.props.current_user.daily_intakes)
   // console.log(this.state.dailyIntakes)
   // console.log(this.state.dailyIntake)
@@ -92,8 +111,8 @@ handleEditSubmit = (e) => {
    const  {current_user} =this.props
 
     const breakfast = () => {
-        if(this.props.current_user.id && this.state.dailyIntakes) {
-            let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
+        if(this.state.dailyIntakes) {
+            let arr = this.state.dailyIntakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'breakfast'
             }) 
             return arr.map(dailyIntake => {
@@ -113,7 +132,7 @@ handleEditSubmit = (e) => {
         }
 
     const lunch = () => {
-        if(this.props.current_user.id && this.state.dailyIntakes) {
+        if(this.state.dailyIntakes) {
             let arr = this.state.dailyIntakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'lunch'
             }) 
@@ -134,7 +153,7 @@ handleEditSubmit = (e) => {
         }
 
     const dinner = () => {
-        if(this.props.current_user.id && this.state.dailyIntakes )  {
+        if(this.state.dailyIntakes )  {
             let arr = this.state.dailyIntakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'dinner'
 
@@ -158,13 +177,13 @@ handleEditSubmit = (e) => {
         }
 
     const snacks = () => {
-        if(this.props.current_user.id && this.state.dailyIntakes) {
+        if(this.state.dailyIntakes) {
             let arr = this.state.dailyIntakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'snack'
             }) 
            
             return arr.map(dailyIntake => {
-              debugger
+              // debugger
                 return  <tr key={dailyIntake.food.id} >
                   
                 <td> {dailyIntake.food.name } <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
@@ -181,6 +200,33 @@ handleEditSubmit = (e) => {
            }
            return "There is no food logged in.."
         }
+
+        const totals = () => {
+          let totals = {
+            protein: 0,
+            sugar: 0,
+            carbs: 0,
+            fat: 0,
+            servings: 0,
+            calories: 0
+          }
+          if (this.state.dailyIntakes.length){
+            this.state.dailyIntakes.forEach((i) => {
+              totals.protein += i.total_protein
+              totals.sugar += i.total_sugar 
+              totals.carbs += i.total_carbs
+              totals.fat += i.total_fat
+              totals.servings += i.serving
+              totals.calories += i.total_calories
+
+            })
+          }
+
+         return totals
+
+  
+          }
+        
     
         
     
@@ -234,12 +280,13 @@ handleEditSubmit = (e) => {
       <th>
         Total
       </th>
-        <td>{current_user.total_servings}</td>
-        <td>{current_user.total_calories}</td>
-        <td>{current_user.total_fat}</td>
-        <td>{current_user.total_carbs}</td>
-        <td>{current_user.total_protein}</td>
-        <td>{current_user.total_sugar}</td>
+
+        <td>{totals().servings}</td>
+        <td>{totals().calories}</td>
+        <td>{totals().fat}</td>
+        <td>{totals().carbs}</td>
+        <td>{totals().protein}</td>
+        <td>{totals().sugar}</td>
         
     </tr>
     <tr>
