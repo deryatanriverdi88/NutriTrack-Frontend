@@ -7,8 +7,8 @@ class DailyIntake extends Component {
    editForm: false, 
    dailyIntake: {},
    serving: null,
-   mealType: ""
-   
+   mealType: "", 
+   dailyIntakes: []
  }
 
 
@@ -33,6 +33,30 @@ handleClick = (e, dailyIntakeItem) => {
  })
 }
 
+componentDidMount(){
+  this.fetchDailyIntake ()
+}
+
+fetchDailyIntake =  () => {
+  fetch('http://localhost:3000/daily_intakes')
+  .then(res => res.json())
+  .then(dailyIntakeItems => {
+    console.log(dailyIntakeItems)
+    console.log(dailyIntakeItems[0].user.id)
+
+    if (this.props.current_user.id){
+      if(dailyIntakeItems[0].user.id === this.props.current_user.id){
+        const todayIntakes = dailyIntakeItems.filter(dailyIntakeItem => {
+          return  dailyIntakeItem.changed_date === new Date().toLocaleDateString()
+         
+        })
+        this.setState({
+          dailyIntakes: todayIntakes
+        })
+      }
+    }
+  })
+}
 
 handleChange = (e) =>{
   // console.log(e.target.value)
@@ -62,8 +86,18 @@ handleEditSubmit = (e) => {
 } 
 
  render() {
-  //  console.log(this.props.current_user.daily_intakes)
-  //  console.log(this.state.dailyIntakes)
+
+
+  const date = (() => {
+    if (this.props.current_user.id && this.props.current_user.daily_intakes !==  undefined ){
+      return this.props.current_user.daily_intakes.map(dailyIntake => {
+        return new Date(dailyIntake.date).toLocaleDateString()
+      })
+    }
+  }) 
+     console.log(this.state.dailyIntakes)
+  // console.log(this.props.current_user.daily_intakes)
+  // console.log(this.state.dailyIntakes)
   // console.log(this.state.dailyIntake)
   // console.log(this.state.dailyIntake)
   // console.log(this.state.mealType, this.state.serving)
@@ -146,7 +180,7 @@ handleEditSubmit = (e) => {
                 return  <tr key={dailyIntake.food.id} >
                   
                 <td> {dailyIntake.food.name } <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
-                <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
+                <td> {dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
                 <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
                 <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
                 <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
@@ -164,6 +198,10 @@ handleEditSubmit = (e) => {
     
   return(
 <div>
+  <button>Previous date</button>
+  
+  <button onClick={this.fetchDailyIntake}>Today :{new Date().toLocaleDateString()} </button>
+
 { this.state.editForm ?  <EditDailyIntake handleChange={this.handleChange} handleEditSubmit={this.handleEditSubmit} /> : null }
 
 <table>
@@ -185,7 +223,8 @@ handleEditSubmit = (e) => {
     <tr>
       <th width="10%">Breakfast</th>
     </tr> 
-      {breakfast()}
+      {breakfast() }
+      
       
     <tr>
       <th width="10%">Lunch</th> 
