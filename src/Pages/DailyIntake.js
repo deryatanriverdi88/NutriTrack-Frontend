@@ -88,13 +88,13 @@ handleEditSubmit = (e) => {
  render() {
 
 
-  const date = (() => {
-    if (this.props.current_user.id && this.props.current_user.daily_intakes !==  undefined ){
-      return this.props.current_user.daily_intakes.map(dailyIntake => {
-        return new Date(dailyIntake.date).toLocaleDateString()
-      })
-    }
-  }) 
+  // const date = (() => {
+  //   if (this.props.current_user.id && this.props.current_user.daily_intakes !==  undefined ){
+  //     return this.props.current_user.daily_intakes.map(dailyIntake => {
+  //       return new Date(dailyIntake.date).toLocaleDateString()
+  //     })
+  //   }
+  // }) 
      console.log(this.state.dailyIntakes)
   // console.log(this.props.current_user.daily_intakes)
   // console.log(this.state.dailyIntakes)
@@ -104,8 +104,8 @@ handleEditSubmit = (e) => {
    const  {current_user} =this.props
 
     const breakfast = () => {
-        if(this.props.current_user.id && this.props.current_user.daily_intakes ) {
-            let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
+        if(this.props.current_user.id && this.state.dailyIntakes) {
+            let arr = this.state.dailyIntakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'breakfast'
             }) 
             return arr.map(dailyIntake => {
@@ -125,8 +125,8 @@ handleEditSubmit = (e) => {
         }
 
     const lunch = () => {
-        if(this.props.current_user.id && this.props.current_user.daily_intakes ) {
-            let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
+        if(this.props.current_user.id && this.state.dailyIntakes) {
+            let arr = this.state.dailyIntakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'lunch'
             }) 
             return arr.map(dailyIntake => {
@@ -146,8 +146,8 @@ handleEditSubmit = (e) => {
         }
 
     const dinner = () => {
-        if(this.props.current_user.id && this.props.current_user.daily_intakes )  {
-            let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
+        if(this.props.current_user.id && this.state.dailyIntakes )  {
+            let arr = this.state.dailyIntakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'dinner'
 
             }) 
@@ -170,8 +170,8 @@ handleEditSubmit = (e) => {
         }
 
     const snacks = () => {
-        if(this.props.current_user.id && this.props.current_user.daily_intakes ) {
-            let arr = this.props.current_user.daily_intakes.filter(dailyIntake => {
+        if(this.props.current_user.id && this.state.dailyIntakes) {
+            let arr = this.state.dailyIntakes.filter(dailyIntake => {
                 return dailyIntake.meal_type === 'snack'
             }) 
            
