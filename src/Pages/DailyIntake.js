@@ -45,8 +45,9 @@ handleDateClick = () =>{
   this.setState({
     date: new Date().toLocaleDateString() 
   })
+  const date = new Date().toLocaleDateString()
   this.fetchDailyIntake()
-  
+  this.props.history.push(`/daily-intake/${date}`)
 }
 
 componentDidMount(){
