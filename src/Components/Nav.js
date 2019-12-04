@@ -12,8 +12,11 @@ function Nav(props){
  
   
   return(
-    
-   <nav id="nav-bar">
+    <>
+    <div>
+      <h1 id="header">NutriTrack</h1>
+    </div>
+     <nav id="nav-bar">
      {
        current_user.id ? 
        <>
@@ -31,6 +34,7 @@ function Nav(props){
        
       
    </nav>
+   </>
     )
    }
 

@@ -1,0 +1,60 @@
+.profile-image{
+    width: 70%;
+    border-radius: 0 50% 0 50%;
+    box-shadow: 10px 15px 6px #aaaaaa;
+}
+
+.profile-div{
+   border: 1px solid black;
+   height: 100vh;
+   display: flex;
+   box-sizing:border-box;
+}
+
+
+.img-div{
+    padding-top: 65px;
+    padding-left: 10%;
+    width: 35%;
+}
+
+.info-div{
+    box-sizing:border-box;
+    padding: 65px;
+    margin-top: 5em;
+    border-radius: 15%;
+    line-height: 2em;
+    width: 40%;
+    height: 50vh;
+    box-shadow: 10px 15px 6px #aaaaaa;
+    font-size: 17px;
+    overflow: auto;
+}
+
+.info-div a{
+    text-decoration: none;
+}
+
+.bold{
+    font-family: 'Baloo Bhai', cursive;
+}
+
+
+.info-div li {
+    font-family: 'Archivo', sans-serif;
+}
+
+.buttons{
+    box-shadow: 10px 15px 6px #aaaaaa;
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    border-radius: 35%;
+    margin:40px auto;
+    cursor: grabbing;
+
+}
+
+.edit{
+    margin-right: 45px;;
+}
