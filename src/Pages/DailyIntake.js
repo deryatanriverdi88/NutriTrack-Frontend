@@ -23,6 +23,21 @@ class DailyIntake extends Component {
 //    })
 // }
 
+handleDeleteClick = (e, dailyIntakeItem) => {
+   console.log(dailyIntakeItem)
+   fetch(`http://localhost:3000/daily_intakes/${dailyIntakeItem.id}`, {
+         method: 'DELETE'
+       }).then(res => {
+         const newArray = this.state.dailyIntakes.filter(dailyIntake =>{
+           return dailyIntake.id !== dailyIntakeItem.id
+          })
+          this.setState({
+           dailyIntakes: newArray
+         })
+       })
+     
+}
+
 
 handleClick = (e, dailyIntakeItem) => {
 //  console.log(dailyIntakeItem)
@@ -48,11 +63,13 @@ fetchDailyIntake =  () => {
   fetch('http://localhost:3000/daily_intakes', config)
   .then(res => res.json())
   .then(dailyIntakeItems => {
-    console.log(dailyIntakeItems)
-   
+    // console.log(dailyIntakeItems)
+   const newIntakes = dailyIntakeItems.filter(dailyIntake => {
+         return dailyIntake.changed_date === new Date().toLocaleDateString()
+   })
         this.setState({
-          dailyIntakes: dailyIntakeItems
-        }, () => console.log("state ----- ", this.state))
+          dailyIntakes: newIntakes
+        })
       
 
   })
@@ -102,7 +119,7 @@ handleEditSubmit = (e) => {
   //     })
   //   }
   // })
-    
+    console.log(this.props.current_user.remaining_calories)
   // console.log(this.props.current_user.daily_intakes)
   // console.log(this.state.dailyIntakes)
   // console.log(this.state.dailyIntake)
@@ -124,7 +141,7 @@ handleEditSubmit = (e) => {
                   <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
                   <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
                   <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
-                  {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
+                  <td onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
                   </tr>
              })
            }
@@ -145,7 +162,7 @@ handleEditSubmit = (e) => {
                   <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
                   <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
                   <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
-                  {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
+                  <td onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
                 </tr>
              })
            }
@@ -167,7 +184,7 @@ handleEditSubmit = (e) => {
                   <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
                   <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
                   <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
-                  {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
+                  <td onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
                 
                 </tr>
               
@@ -194,7 +211,7 @@ handleEditSubmit = (e) => {
                 <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
                 <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
                
-                {/* <td onClick={(e) => this.handleClick(e, dailyIntake)}> <span> ❌ </span> </td> */}
+                <td width="10%" onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
                 </tr>
              })
            }
@@ -212,23 +229,43 @@ handleEditSubmit = (e) => {
           }
           if (this.state.dailyIntakes.length){
             this.state.dailyIntakes.forEach((i) => {
+              totals.servings += i.serving
               totals.protein += i.total_protein
               totals.sugar += i.total_sugar 
               totals.carbs += i.total_carbs
               totals.fat += i.total_fat
-              totals.servings += i.serving
               totals.calories += i.total_calories
-
             })
           }
-
          return totals
-
-  
-          }
-        
+      }      
+      
+      
+      const remaining = () => {
+        let total = {
+          protein: 0,
+          sugar: 0,
+          carbs: 0,
+          fat: 0,
+          calories: 0
+        }
+        if (this.state.dailyIntakes.length){
+             
+          this.state.dailyIntakes.forEach((i) => {
+            // debugger
+            total.calories = i.user_remaining_calories
+            total.protein = i.user_remaining_protein
+            total.sugar = i.user_remaining_sugar
+            total.carbs = i.user_remaining_carbs
+            total.fat = i.user_remaining_fat
+             
     
-        
+          })
+        }
+     
+       return total
+       
+    }
     
   return(
 <div>
@@ -241,7 +278,7 @@ handleEditSubmit = (e) => {
 <table>
     <thead>
      <tr>
-        <th width="10%"></th> 
+        <th width="20%"></th> 
         <th width="10%">Serving</th>
         <th width="10%">Calorie ( kcal )</th> 
        
@@ -249,13 +286,14 @@ handleEditSubmit = (e) => {
         <th width="10%">Carbs ( g )</th>
         <th width="10%">Protein ( g )</th>
         <th width="10%">Sugar ( g )</th>
+        <th width="5%"></th>
        
      </tr>
     </thead>
     <tbody>
         
     <tr>
-      <th width="10%">Breakfast</th>
+      <th width="0%">Breakfast</th>
     </tr> 
       {breakfast() }
       
@@ -281,12 +319,12 @@ handleEditSubmit = (e) => {
         Total
       </th>
 
-        <td>{totals().servings}</td>
-        <td>{totals().calories}</td>
-        <td>{totals().fat}</td>
-        <td>{totals().carbs}</td>
-        <td>{totals().protein}</td>
-        <td>{totals().sugar}</td>
+        <td>{(totals().servings)}</td>
+        <td>{(totals().calories)}</td>
+        <td>{(totals().fat).toFixed(2)}</td>
+        <td>{(totals().carbs).toFixed(2)}</td>
+        <td>{(totals().protein).toFixed(2)}</td>
+        <td>{(totals().sugar).toFixed(2)}</td>
         
     </tr>
     <tr>
@@ -300,12 +338,19 @@ handleEditSubmit = (e) => {
     </tr>
     <tr>
     <th>Remaining </th>
-      <td></td>
+   
+    <td></td>
+      <td>{remaining().calories}</td>
+      <td>{(remaining().fat).toFixed(2)}</td>
+      <td>{(remaining().carbs).toFixed(2)}</td>
+      <td>{(remaining().protein).toFixed(2)}</td>
+      <td>{(remaining().sugar).toFixed(2)}</td>
+      {/* <td></td>
       <td>{current_user.remaining_calories}</td>
       <td>{current_user.remaining_fat}</td>
       <td>{current_user.remaining_carbs}</td>
       <td>{current_user.remaining_protein}</td>
-      <td>{current_user.remaining_sugar}</td>
+      <td>{current_user.remaining_sugar}</td> */}
     </tr>
     </tbody>
  </table>
