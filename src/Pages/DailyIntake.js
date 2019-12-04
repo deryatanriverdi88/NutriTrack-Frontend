@@ -46,10 +46,22 @@ handleDateClick = () =>{
     date: new Date().toLocaleDateString() 
   })
   this.fetchDailyIntake()
+  
 }
 
 componentDidMount(){
   this.fetchDailyIntake()
+  const date = this.props.match.params.date 
+  if ( date ) {
+    this.setState({
+      date: date
+    })
+  } else {
+    this.setState({
+      date: new Date().toLocaleDateString()
+    })
+  }
+  // debugger
 }
 
 fetchDailyIntake =  () => {
@@ -91,7 +103,8 @@ handleDateChange = (e) => {
     [e.target.name]: e.target.value
   })
   this.fetchDailyIntake()
-
+ 
+  this.props.history.push(`/daily-intake/${e.target.value}`)
 }
 
 handleEditSubmit = (e) => {
