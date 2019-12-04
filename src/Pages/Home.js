@@ -27,7 +27,7 @@ const renderingHome = () =>{
 
     // debugger
     return (
-    <div>Home Page
+    <div id="home">Home Page
       {/* <h2>Welcome {current_user ? current_user.username : null} </h2>
      */}
     {renderingHome()}
