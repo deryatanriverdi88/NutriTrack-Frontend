@@ -2,6 +2,7 @@ import React  from 'react'
 import { useSelector } from 'react-redux'
 import DailySummary from '../Components/DailySummary'
 
+
 function  Home(){
 
   const current_user = useSelector(state => {
@@ -19,7 +20,7 @@ const renderingHome = () =>{
     ) 
   }else {
       return (<>
-      <h2>Welcome to NutriTrack</h2>
+      <h2 id="app-name">Welcome to NutriTrack</h2>
       </>
       )
     }
@@ -27,7 +28,7 @@ const renderingHome = () =>{
 
     // debugger
     return (
-    <div id="home">Home Page
+    <div id="home">
       {/* <h2>Welcome {current_user ? current_user.username : null} </h2>
      */}
     {renderingHome()}
