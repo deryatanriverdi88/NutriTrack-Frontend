@@ -7,7 +7,7 @@ import './Home.css'
 import './Nav.css'
 import './DailySummary.css'
 import './Profile.css'
-
+import './Login.css'
 
 
 class App  extends React.Component{
