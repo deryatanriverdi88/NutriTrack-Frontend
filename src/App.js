@@ -3,6 +3,7 @@ import './App.css';
 import Routes from './Routes'
 import { connect } from 'react-redux'
 import Nav from './Components/Nav'
+import './Home.css'
 
 
 
