@@ -41,6 +41,7 @@ handleClick = (e, dailyIntakeItem) => {
    mealType: dailyIntakeItem.meal_type
  })
 }
+
 handleDateClick = () =>{
   this.setState({
     date: new Date().toLocaleDateString() 
@@ -137,22 +138,10 @@ handleEditSubmit = (e) => {
 
  render() {
 
-
-  // const date = (() => {
-  //   if (this.props.current_user.id && this.props.current_user.daily_intakes !==  undefined ){
-  //     return this.props.current_user.daily_intakes.map(dailyIntake => {
-  //       return new Date(dailyIntake.date).toLocaleDateString()
-  //     })
-  //   }
-  // })
-  // console.log(this.props.current_user.remaining_calories)
-  // console.log(this.props.current_user.daily_intakes)
   
   console.log(this.state.date)
  
-  // console.log(this.state.dailyIntake)
-  // console.log(this.state.dailyIntake)
-  // console.log(this.state.mealType, this.state.serving)
+
    const  {current_user} =this.props
 
     const breakfast = () => {
@@ -162,7 +151,7 @@ handleEditSubmit = (e) => {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id} >
-                  <td> {dailyIntake.food.name } {dailyIntake.date} <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
+                  <td> {dailyIntake.food.name } {dailyIntake.changed_date} <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
                   <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
                   <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
                   <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
@@ -183,7 +172,7 @@ handleEditSubmit = (e) => {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id}>
-                  <td>  {dailyIntake.food.name } {dailyIntake.date} <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
+                  <td>  {dailyIntake.food.name } {dailyIntake.changed_date} <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
                   <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
                   <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
                   <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 

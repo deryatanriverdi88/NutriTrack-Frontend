@@ -21,6 +21,13 @@
   color: #09d3ac;
 }
 
+#home {
+  background-image: url('../src/images/nutritions-4.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150vh;
+}
+
 .profile-image{
   width:25%;
 } 
@@ -38,3 +45,5 @@ table, th, td, tr{
   border: 1px solid black;
   height: 50px;
 }
+
+
