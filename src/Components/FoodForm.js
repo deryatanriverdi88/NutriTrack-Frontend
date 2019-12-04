@@ -12,7 +12,7 @@ class FoodForm extends Component {
     state={
         serving: null,
         mealType: "",
-        date: '',
+        date: new Date().toLocaleDateString(),
         foodView: false,
         food: {}
         
@@ -56,7 +56,7 @@ class FoodForm extends Component {
             console.log(user)
             this.props.setUser(user)
             setTimeout(() => {
-                this.props.history.push('/daily-intake')
+                this.props.history.push(`/daily-intake/${this.state.date}`)
             }, 50)
         })
         // .then( this.props.history.push('/daily-intake'))

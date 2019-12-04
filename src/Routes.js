@@ -14,7 +14,9 @@ const Routes = () => {
             <Route exact path='/edit' component={Pages.Edit}/>
             <Route exact path="/add-food" component={Pages.AddFood}/>
             <Route exact path="/food/:id" component={Pages.FoodItem}/>
-            <Route exact path="/daily-intake" component={Pages.DailyIntake}/>
+            <Route  exact path="/daily-intake/:date" component={Pages.DailyIntake}/>
+            <Route  path="/daily-intake" component={Pages.DailyIntake}/>
+            
             <Route exact path='/test' component={Pages.Test}/>
         
           </Switch>
