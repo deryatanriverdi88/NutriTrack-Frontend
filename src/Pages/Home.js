@@ -1,6 +1,7 @@
 import React  from 'react'
 import { useSelector } from 'react-redux'
 import DailySummary from '../Components/DailySummary'
+import { Link} from 'react-router-dom'
 
 
 function  Home(){
@@ -14,13 +15,16 @@ const renderingHome = () =>{
   if(current_user.id){
     return (
     <>
-    <h2> Welcome {current_user.name}</h2>
     <DailySummary user={current_user}/>
     </>
     ) 
   }else {
       return (<>
-      <h2 id="app-name">Welcome to NutriTrack</h2>
+      <h2 id="greeting">Welcome to NutriTrack</h2>
+      <div class="login-message">
+      <p>Start free!</p>
+      <Link to="/login"> Login </Link>
+      </div>
       </>
       )
     }

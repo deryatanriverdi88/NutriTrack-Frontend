@@ -1,3 +1,4 @@
+
 #nav-bar{
     background-color: rgb(44,134,81);
     height: 8vh;
@@ -25,3 +26,14 @@
     font-weight: bold;
     text-align: center;
 }
+
+#header{
+    
+    font-family: 'Courgette', cursive;
+    padding-left: 45px;
+    font-size: 40px;
+    color: rgb(109,209,150);
+    letter-spacing: 10px;
+    text-shadow: 2px 2px 4px #000000;
+}
+

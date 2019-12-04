@@ -7,9 +7,9 @@
     margin-top: 0;
   }
 
-#app-name{
+#greeting{
    justify-content: right;
-   padding-top: 28%;
+   padding-top: 23%;
    padding-left: 45%; 
    font-family: 'Courgette', cursive;
    overflow-x: hidden;
@@ -19,3 +19,20 @@
    text-shadow: 2px 2px 4px #000000;
    margin: 0;
 }  
+
+.login-message{
+  justify-content: right;
+   padding-left: 55%; 
+   padding-top: 1%;
+   letter-spacing: 5px;
+  
+
+}
+
+.login-message a {
+    text-decoration: none;
+    padding-left: 15px;
+    letter-spacing: 5px;
+    cursor: grabbing;
+
+}

@@ -29,25 +29,31 @@ if(current_user.id) {
   const {username, name, age, weight, height, goal_calorie, gender, image, goal_carbs, goal_fat, goal_protein, goal_sugar} = current_user
   return(
     
-    <div> 
-        <h1> Profile Page</h1>
+    <div className="profile-div"> 
+      <div className="img-div">
+      
         <img className="profile-image" src={image} alt="name"/>
-        <h2>Name : {name}</h2>
+        </div>
+        <div className="clear"></div>
+        <div className="info-div">
+       
         <ul>
-         <li>Username : {username}</li>
-         <li>Age : {age} </li>
-         <li>Gender : {gender}</li>
-         <li>Height : {height} </li>
-         <li>Weight : {weight} </li>
-         <li>Daily calorie goal : {goal_calorie} </li> 
-         <li>Daily carbs goal : {goal_carbs}</li>
-         <li>Daily fat goal : {goal_fat}</li>
-         <li>Daily protein goal : {goal_protein}</li>
-         <li>Daily sugar goal : {goal_sugar}</li>
-         <Link to="/edit"> Edit Profile!</Link>
-         <Link to='/login' onClick={deleteUser}>Delete Profile</Link>
-    
+         <li><span className="bold">Name :</span> {name}</li>
+         <li><span className="bold">Username : </span>{username}</li>
+         <li><span className="bold">Age :</span> {age} </li>
+         <li><span className="bold">Gender :</span> {gender}</li>
+         <li><span className="bold">Height :</span> {height} </li>
+         <li><span className="bold">Weight :</span> {weight} </li>
+         <li><span className="bold">Daily calorie goal :</span> {goal_calorie} </li> 
+         <li><span className="bold">Daily carbs goal :</span> {goal_carbs}</li>
+         <li><span className="bold">Daily fat goal :</span> {goal_fat}</li>
+         <li><span className="bold">Daily protein goal :</span> {goal_protein}</li>
+         <li><span className="bold">Daily sugar goal :</span> {goal_sugar}</li>
+         <Link to="/edit" className="buttons edit"> Edit Profile!</Link>
+         <Link to='/login' className="buttons" onClick={deleteUser}>Delete Profile</Link>
+        
         </ul>
+        </div>
     </div>
      )
 }

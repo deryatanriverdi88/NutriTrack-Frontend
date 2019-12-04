@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import Nav from './Components/Nav'
 import './Home.css'
 import './Nav.css'
+import './DailySummary.css'
+import './Profile.css'
 
 
 

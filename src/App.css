@@ -2,6 +2,7 @@
   text-align: center;
   box-sizing: border-box;
   max-width: 80%;
+ 
 }
 
 .App-logo {
@@ -25,10 +26,6 @@
 
 
 
-.profile-image{
-  width:25%;
-
-} 
 
 li {
   list-style: none;
