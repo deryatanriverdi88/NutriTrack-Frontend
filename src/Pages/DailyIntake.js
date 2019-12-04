@@ -253,11 +253,11 @@ handleEditSubmit = (e) => {
              
           this.state.dailyIntakes.forEach((i) => {
             // debugger
-            total.calories = i.user_remaining_calories
-            total.protein = i.user_remaining_protein
-            total.sugar = i.user_remaining_sugar
-            total.carbs = i.user_remaining_carbs
-            total.fat = i.user_remaining_fat
+            total.calories = current_user.goal_calorie - totals().calories
+            total.protein = current_user.goal_protein - totals().protein
+            total.sugar = current_user.goal_sugar - totals().sugar
+            total.carbs = current_user.goal_carbs - totals().carbs
+            total.fat = current_user.goal_fat - totals().fat
              
     
           })
