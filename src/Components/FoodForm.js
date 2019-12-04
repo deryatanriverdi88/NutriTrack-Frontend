@@ -15,6 +15,7 @@ class FoodForm extends Component {
         date: '',
         foodView: false,
         food: {}
+        
     }
 
     handleChange = (e) => {
@@ -56,7 +57,7 @@ class FoodForm extends Component {
             this.props.setUser(user)
             setTimeout(() => {
                 this.props.history.push('/daily-intake')
-            }, 100)
+            }, 50)
         })
         // .then( this.props.history.push('/daily-intake'))
         
