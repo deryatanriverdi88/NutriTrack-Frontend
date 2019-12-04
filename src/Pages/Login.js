@@ -20,9 +20,12 @@ class Login extends Component {
  }
 
 loginForm = () => {
-  return (<form onSubmit={this.handleLoginSubmit}>
+  return ( 
+        
+         <form  className="inputs" onSubmit={this.handleLoginSubmit}>
+           
            <label htmlFor="username">
-              Username :
+              <span>Username</span>
              <input type="text"
                   id="username"
                   value={this.state.username}
@@ -31,7 +34,7 @@ loginForm = () => {
              />
             </label>
             <label htmlFor="password">
-              Password :
+              <span>Password :</span>
               <input type="password"
                     id="password"
                     value={this.state.password}
@@ -39,13 +42,14 @@ loginForm = () => {
                     onChange={this.handleChange}
               />
             </label>
-            <input type="submit"/>
+            <input type="submit" id="submit"/>
           </form>)
 }
 
 signupForm = () => {
   return (
-    <form onSubmit={this.handleSignupSubmit}>
+   
+    <form  className="inputs " onSubmit={this.handleSignupSubmit}>
     <label htmlFor="name">
       Name :
        <input 
@@ -137,7 +141,7 @@ signupForm = () => {
          onChange={this.handleChange}
        />
     </label>
-    <input type="submit"/>
+    <input type="submit" id="submit"/>
     </form>
   )
 }
@@ -227,12 +231,11 @@ handleSignupSubmit = (event) => {
 //  console.log(this.props.history)
    console.log(this.props.current_user)
   return(
-   <div>
+   <div className="login-form">
     {
       this.state.errors
     }
-    <h1> {this.state.loginOn ? "Login Page" : "Sign Up Page" }</h1>
-
+  
     <p>{this.state.loginOn ? 
       "Don't have an account yet?" : 
       "I have an account" } 

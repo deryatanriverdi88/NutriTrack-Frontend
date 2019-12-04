@@ -1,0 +1,43 @@
+.login-form{
+   
+    margin: 13em auto;
+    width: 50em;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+   box-sizing: border-box;
+   text-align: center;
+   font-family: 'Archivo', sans-serif;
+   -webkit-box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
+-moz-box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
+box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.inputs label{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.inputs label span{
+    font-family: 'Baloo Bhai', cursive;
+}
+
+#username, #password, #name, #age, #image, #gender, #weight, #height, #goalCalorie  {
+   width: 15rem;
+   height: 2rem;
+   margin-bottom: 2rem;
+}
+
+#submit{
+    margin: 0 auto;
+    display: inline-block;
+    width: 15rem;
+    height: 2rem;
+}
