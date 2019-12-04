@@ -13,19 +13,19 @@ function Nav(props){
   
   return(
     
-   <nav>
+   <nav id="nav-bar">
      {
        current_user.id ? 
        <>
-       <Link to="/">Home</Link>
-       <Link to="/profile">Profile</Link>
-       <Link to="/daily-intake">My daily intake</Link>
-       <Link to='/add-food'>Add Food</Link>
-       <NavLink to='/login'><button onClick={props.clearUser}>Logout</button></NavLink>
+       <Link className="link" to="/">Home</Link>
+       <Link className="link"to="/profile">Profile</Link>
+       <Link className="link"to="/daily-intake">My daily intake</Link>
+       <Link className="link"to='/add-food'>Add Food</Link>
+       <NavLink className="link " to='/login'><button id="logout" onClick={props.clearUser}>Logout</button></NavLink>
        </> : 
        <>
-       <Link to="/">Home</Link>
-       <Link to="/login">Login</Link>
+       <Link className="link" to="/">Home</Link>
+       <Link className="link"to="/login">Login</Link>
        </>
      }
        
