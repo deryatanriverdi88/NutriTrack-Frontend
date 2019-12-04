@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   box-sizing: border-box;
- margin: 0;
   max-width: 80%;
 }
 
@@ -25,8 +24,10 @@
 }
 
 
+
 .profile-image{
   width:25%;
+
 } 
 
 li {
