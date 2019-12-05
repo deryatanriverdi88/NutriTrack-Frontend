@@ -10,6 +10,8 @@ import './Profile.css'
 import './Login.css'
 import './AddFood.css'
 import './FoodForm.css'
+import './DailyIntake.css'
+import './FoodItem.css'
 
 
 class App  extends React.Component{

@@ -71,6 +71,7 @@ class FoodForm extends Component {
         // console.log(this.state.serving)
         const {name} = this.props.food
         return(
+            <div className="background-for-z-index">
             <div className="food-form" > 
     
         
@@ -122,6 +123,7 @@ class FoodForm extends Component {
                         null
                     }
             
+            </div>
             </div>
            )
     }

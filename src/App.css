@@ -33,14 +33,6 @@ li {
   list-style: none;
 }
 
-table{
-  margin:20px auto;
-  height: 50vh;
-  width: 90%;
-}
-table, th, td, tr{
-  border: 1px solid black;
-  height: 50px;
-}
+
 
 
