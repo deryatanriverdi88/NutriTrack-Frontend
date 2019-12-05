@@ -12,6 +12,7 @@ import './AddFood.css'
 import './FoodForm.css'
 import './DailyIntake.css'
 import './FoodItem.css'
+import './EditProfile.css'
 
 
 class App  extends React.Component{

@@ -1,0 +1,26 @@
+.edit-profile{
+    margin: 8em auto;
+    width: 70em;
+    height: 50vh;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+   box-sizing: border-box;
+   text-align: center;
+   overflow: auto;
+   font-family: 'Archivo', sans-serif;
+   -webkit-box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
+-moz-box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
+box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
+}
+
+.inputs{
+    padding:0;
+}
+
+#goalCarbs, #goalFat, #goalSugar, #goalProtein{
+    width: 15rem;
+    height: 2rem;
+    margin-bottom: 2rem;
+}
