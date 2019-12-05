@@ -78,11 +78,11 @@ class Edit extends Component {
        
       {this.props.current_user.id  ? 
      
-        <div>
-       Edit Form
-    <form onSubmit={this.handleEditSubmit}>
+        <div className="edit-profile">
+       
+    <form className="inputs" onSubmit={this.handleEditSubmit}>
     <label htmlFor="name">
-      Name :
+      <span>Name :</span>
        <input 
          id="name"
          name="name"
@@ -92,7 +92,7 @@ class Edit extends Component {
        />
     </label>
     <label htmlFor="username">
-      Username : 
+      <span>Username : </span>
        <input 
          id="username"
          name="username"
@@ -102,7 +102,7 @@ class Edit extends Component {
        />
     </label>
     <label htmlFor="age">
-      Age: 
+     <span> Age: </span>
        <input 
          name="age"
          id="age"
@@ -113,7 +113,7 @@ class Edit extends Component {
        />
     </label>
     <label htmlFor="image">
-      Image :
+      <span>Image :</span>
         <input 
           id="image"
           name="image"
@@ -123,7 +123,7 @@ class Edit extends Component {
         />
     </label>
     <label htmlFor="gender">
-      Gender :
+      <span>Gender :</span>
       <select name="gender" id="gender"
       onChange={this.handleChange}>
         <option> Select</option>
@@ -133,7 +133,7 @@ class Edit extends Component {
       </select>
     </label>
     <label htmlFor="weight" >
-      Weight : 
+      <span>Weight :</span> 
        <input 
          id="weight"
          name="weight"
@@ -143,7 +143,7 @@ class Edit extends Component {
        />
     </label>
     <label htmlFor="height">
-      Height : 
+      <span>Height : </span>
        <input 
          id="height"
          name="height"
@@ -153,7 +153,7 @@ class Edit extends Component {
        />
     </label>
     <label htmlFor="goalCalorie" >
-      Daily goal calorie : 
+      <span>Daily goal calorie : </span>
        <input 
          id="goalCalorie"
          name="goal_calorie"
@@ -164,7 +164,7 @@ class Edit extends Component {
     </label>
 
     <label htmlFor="goalCarbs" >
-      Daily carbs goal : 
+      <span>Daily carbs goal : </span>
        <input 
          id="goalCarbs"
          name="goal_carbs"
@@ -175,9 +175,9 @@ class Edit extends Component {
     </label>
 
     <label htmlFor="goalFat" >
-      Daily fat goal : 
+      <span>Daily fat goal : </span>
        <input 
-         id="goal_fat"
+         id="goalFat"
          name="goal_fat"
          value={goal_fat}
          type="float"
@@ -186,7 +186,7 @@ class Edit extends Component {
     </label>
    
     <label htmlFor="goalSugar" >
-      Daily sugar goal : 
+      <span>Daily sugar goal :</span> 
        <input 
          id="goalSugar"
          name="goal_sugar"
@@ -197,7 +197,7 @@ class Edit extends Component {
     </label>
 
     <label htmlFor="goalProtein" >
-      Daily protein goal : 
+      <span>Daily protein goal : </span>
        <input 
          id="goalProtein"
          name="goal_protein"
@@ -208,7 +208,7 @@ class Edit extends Component {
     </label>
     
   
-    <input type="submit"/>
+    <input type="submit" id="submit"/>
     </form>
    </div> : null
      }

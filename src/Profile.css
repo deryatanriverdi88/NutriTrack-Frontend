@@ -13,7 +13,7 @@
 
 
 .img-div{
-    padding-top: 65px;
+    padding-top: 125px;
     padding-left: 10%;
     width: 35%;
 }
@@ -24,11 +24,11 @@
     margin-top: 5em;
     border-radius: 15%;
     line-height: 2em;
-    width: 40%;
+    width: 30%;
     height: 50vh;
     box-shadow: 10px 15px 6px #aaaaaa;
     font-size: 17px;
-    overflow: auto;
+   
 }
 
 .info-div a{
@@ -44,17 +44,14 @@
     font-family: 'Archivo', sans-serif;
 }
 
-.buttons{
-    box-shadow: 10px 15px 6px #aaaaaa;
+.edit, .delete-profile{
+    border: 1px solid rgb(168,180,173);
     display: inline-block;
     width: 40%;
     text-align: center;
-    border-radius: 35%;
+    border-radius: 15px;
     margin:40px auto;
     cursor: grabbing;
+   margin-right: 15px;
 
-}
-
-.edit{
-    margin-right: 45px;;
 }

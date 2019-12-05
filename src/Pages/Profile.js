@@ -49,8 +49,8 @@ if(current_user.id) {
          <li><span className="bold">Daily fat goal :</span> {goal_fat}</li>
          <li><span className="bold">Daily protein goal :</span> {goal_protein}</li>
          <li><span className="bold">Daily sugar goal :</span> {goal_sugar}</li>
-         <Link to="/edit" className="buttons edit"> Edit Profile!</Link>
-         <Link to='/login' className="buttons" onClick={deleteUser}>Delete Profile</Link>
+         <Link to="/edit" className="edit"> Edit Profile!</Link>
+         <Link to='/login' className="delete-profile" onClick={deleteUser}>Delete Profile</Link>
         
         </ul>
         </div>
