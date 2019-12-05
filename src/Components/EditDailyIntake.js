@@ -3,12 +3,16 @@ import React, { Component } from 'react'
 class  EditDailyIntake extends Component {
  state = {}
  render() {
+
+  console.log(this.props)
   return(
     <div className="background-for-z-index">
    <div className="edit-daily-intake">
+     <div className="x-div">
    <button onClick={this.props.handleClick}className="x"> ❌ </button>
+   </div>
        <form onSubmit={this.props.handleEditSubmit}>
-      
+          <h3>{this.props.intake.food.name}</h3>
           <label htmlFor="serving"> Servings of </label> 
             <input 
                 id="serving" 
