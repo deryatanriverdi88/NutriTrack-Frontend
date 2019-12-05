@@ -5,7 +5,7 @@ const  FoodItem = (props) => {
 const {name, calorie, carb, sugar, fat, serving_size, protein} = props.food
     console.log(props)
   return(
-    <div> 
+    <div > 
         Food Item 
         <ul>
           

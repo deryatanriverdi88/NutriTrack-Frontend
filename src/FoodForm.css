@@ -1,0 +1,57 @@
+.food-form{
+    text-align: center;
+    font-family: 'Archivo', sans-serif;
+    /* display: flex; */
+    margin: 2em auto 4em;
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    -webkit-box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
+-moz-box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
+box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
+}
+
+.food-form label{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.serving, .date, .meal-type{
+    font-family: 'Domine', serif;
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
+#date, #serving, #mealtype{
+    width: 30%;
+    margin-bottom: 1em;
+    border-radius: 15px;
+    outline: 0;
+    height: 20px;
+}
+
+#date {
+    margin: 0 auto;
+}
+
+.x, .nutrition-info-button{
+    display: inline-block;
+    width: 3em;
+    height: 30px;
+    margin: 10px auto;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.nutrition-info-button{
+    width: 10em;
+}
+
+.add-your-diary{
+    width: 15em;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 15px;
+}

@@ -64,19 +64,16 @@ class AddFood extends Component {
          } 
    })
   return(
-   <div>
-
-       Add food 
-
-       <form>
+   <div >
+       <form className="add-food-form">
            <label>
                Search
            </label>
-          <input type="text" onChange={this.handleChange}/>
+          <input className="add-food-input" type="text" onChange={this.handleChange}/>
 
        </form>
 
-       <ul>
+       <ul className="foods">
 
 
             {    this.props.foods ?

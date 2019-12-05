@@ -8,6 +8,8 @@ import './Nav.css'
 import './DailySummary.css'
 import './Profile.css'
 import './Login.css'
+import './AddFood.css'
+import './FoodForm.css'
 
 
 class App  extends React.Component{
