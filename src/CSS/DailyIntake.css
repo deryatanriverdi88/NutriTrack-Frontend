@@ -21,24 +21,45 @@ th{
     letter-spacing: 5px;
 }
 
+
+
 .calorie{
     background-color: rgba(235,27,60, 0.6)
+}
+
+.calorie:hover{
+    background-color: rgba(235,27,60, 0.3);
 }
 
 .fat{
    background-color: rgba(235,110,27, 0.6)
 }
 
+.fat:hover{
+    background-color: rgba(235,110,27, 0.3)
+}
+
 .carbs{
     background-color: rgba(61,131,48, 0.6)
+}
+
+.carbs:hover{
+    background-color: rgba(61,131,48, 0.3)
 }
 
 .protein{
     background-color:rgba(26,51,180, 0.6)
 }
+.protein:hover{
+    background-color:rgba(26,51,180, 0.3)
+}
 
 .sugar{
-    background-color:rgba(214,96,209, 0.5)
+    background-color:rgba(214,96,209, 0.6)
+}
+
+.sugar:hover{
+    background-color:rgba(214,96,209, 0.3)
 }
 
 .deleteIntake{
@@ -47,10 +68,11 @@ th{
 
 .daily-intake{
     padding-top: 25px;
-   margin: 0;
+    margin: 0;
     height: 150vh;
     background: rgb(195,169,34);
 background: linear-gradient(95deg, rgba(195,169,34, 0.5) 0%, rgba(45,213,253,0.6) 100%);
+
 }
 
 .edit-intake{

@@ -75,6 +75,7 @@ class Edit extends Component {
   console.log(this.state)
   return(
       <>
+      <div className="edit-profile-div">
        
       {this.props.current_user.id  ? 
      
@@ -212,6 +213,7 @@ class Edit extends Component {
     </form>
    </div> : null
      }
+     </div>
      </>
    
     )
