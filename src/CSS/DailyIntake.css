@@ -13,7 +13,7 @@ th, td{
   border: 3px solid gray;
   height: 50px;
   text-align: center;
- 
+  font-size: 20px;
 }
 
 
@@ -21,8 +21,22 @@ th{
     letter-spacing: 5px;
 }
 
+.breakfast{
+    color: rgb(240, 42, 129);
+    
+}
 
+.lunch{
+    color: rgb(148,65,180);
+}
 
+.dinner{
+    color:rgb(44,64,211);
+}
+
+.snack{
+    color: rgb(42,88,19)
+}
 .calorie{
     background-color: rgba(235,27,60, 0.6)
 }
@@ -86,10 +100,13 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.5) 0%, rgba(45,213,253,0.6
     font-size: 15px;
 }
 
+.select-day{
+    font-size: 20px;
+}
 
 .date, .select-day{
     
-    margin: 0 auto;
+    margin: 10px auto;
     display: flex;
     width: 10%;
 }

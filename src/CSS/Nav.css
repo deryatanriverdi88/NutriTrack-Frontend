@@ -36,6 +36,11 @@
     font-family: 'Cinzel', serif;
     font-weight: bold;
     text-align: center;
+    font-size: 18px;
+}
+
+#logout:focus{
+    outline: 0;
 }
 
 

@@ -49,9 +49,9 @@ loginForm = () => {
 signupForm = () => {
   return (
    
-    <form  className="inputs " onSubmit={this.handleSignupSubmit}>
+    <form  className="inputs" onSubmit={this.handleSignupSubmit}>
     <label htmlFor="name">
-      Name :
+     <span> Name :</span>
        <input 
          id="name"
          name="name"
@@ -61,7 +61,7 @@ signupForm = () => {
        />
     </label>
     <label htmlFor="username">
-      Username : 
+     <span> Username :</span> 
        <input 
          id="username"
          name="username"
@@ -71,7 +71,7 @@ signupForm = () => {
        />
     </label>
     <label htmlFor="age">
-      Age: 
+      <span>Age: </span>
        <input 
          name="age"
          id="age"
@@ -82,7 +82,7 @@ signupForm = () => {
        />
     </label>
     <label htmlFor="image"> 
-    Image :
+    <span>Image :</span>
         <input 
           id="image"
           name="image"
@@ -92,7 +92,7 @@ signupForm = () => {
         />
     </label>
     <label htmlFor="gender">
-      Gender :
+      <span>Gender :</span>
       <select name="gender" id="gender"
       onChange={this.handleChange}>
         <option> Select</option>
@@ -102,7 +102,7 @@ signupForm = () => {
       </select>
     </label>
     <label htmlFor="weight" >
-      Weight : 
+      <span>Weight : </span>
        <input 
          id="weight"
          name="weight"
@@ -112,7 +112,7 @@ signupForm = () => {
        />
     </label>
     <label htmlFor="height">
-      Height : 
+      <span>Height : </span>
        <input 
          id="height"
          name="height"
@@ -122,7 +122,7 @@ signupForm = () => {
        />
     </label>
     <label htmlFor="goalCalorie" >
-      Daily goal calorie : 
+      <span>Daily goal calorie : </span>
        <input 
          id="goalCalorie"
          name="goalCalorie"
@@ -132,7 +132,7 @@ signupForm = () => {
        />
     </label>
     <label htmlFor="password" >
-      Password : 
+      <span>Password : </span>
        <input 
          id="password"
          name="password"
@@ -242,8 +242,8 @@ handleSignupSubmit = (event) => {
       "I have an account" } 
       <b onClick={this.handleClick}>
       { this.state.loginOn ? 
-        "Sign Up!" : 
-        "Login!" }
+        <span>Sign Up!</span>: 
+        <span>Login!</span> }
         </b>
        </p>
     {
