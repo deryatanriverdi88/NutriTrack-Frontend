@@ -231,6 +231,7 @@ handleSignupSubmit = (event) => {
 //  console.log(this.props.history)
    console.log(this.props.current_user)
   return(
+    <div className="login-container">
    <div className="login-form">
     {
       this.state.errors
@@ -251,6 +252,7 @@ handleSignupSubmit = (event) => {
      :
       this.signupForm()
     }
+   </div>
    </div>
     )
    }

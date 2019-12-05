@@ -3,10 +3,16 @@
     width:15%;
     border-radius: 0 50% 0 50%;
     position: relative;
-    top: 8vh;
-    left: 45vw;
+    top: 20vh;
+    left: 50vw;
     box-shadow: 10px 15px 6px #aaaaaa;
-    opacity: 0.8;
+ 
     
+}
+
+.main-image:hover{
+    -webkit-transform: rotateZ(30deg);
+    -ms-transform: rotateZ(30deg);
+    transform: rotateZ(30deg);
 }
 
