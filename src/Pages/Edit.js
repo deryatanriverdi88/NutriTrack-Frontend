@@ -17,6 +17,10 @@ class Edit extends Component {
      }
  }
 
+ handleClose =()=>{
+   this.props.history.push('/profile')
+ }
+
  handleChange = (event) => {
     console.log(event.target.value)
 
@@ -80,7 +84,7 @@ class Edit extends Component {
       {this.props.current_user.id  ? 
      
         <div className="edit-profile">
-       
+    <button className="close" onClick={this.handleClose}> ❌ </button>
     <form className="inputs" onSubmit={this.handleEditSubmit}>
     <label htmlFor="name">
       <span>Name :</span>

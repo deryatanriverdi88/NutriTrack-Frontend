@@ -1,6 +1,7 @@
 
 .food-item ul li{
     font-family: 'Archivo', sans-serif;
+    border-bottom: 1px solid black;
 }
  
 

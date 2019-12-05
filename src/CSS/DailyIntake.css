@@ -85,7 +85,7 @@ th{
     margin: 0;
     height: 150vh;
     background: rgb(195,169,34);
-background: linear-gradient(95deg, rgba(195,169,34, 0.5) 0%, rgba(45,213,253,0.5) 100%);
+    background: linear-gradient(95deg, rgba(195,169,34, 0.5) 0%, rgba(45,213,253,0.5) 100%);
 
 }
 
@@ -128,4 +128,9 @@ margin-left:47%;
 margin-right: 45%; 
 font-family: 'Baloo Bhai', cursive;
 
+}
+
+.exeeded {
+    background-color: rgba(255, 0, 2, 0.9);
+    color: white;
 }
