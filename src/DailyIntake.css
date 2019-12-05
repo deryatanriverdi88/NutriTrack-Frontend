@@ -7,14 +7,42 @@ table{
   empty-cells: show;
 
 }
-table, th, td, tr{
+th, td{
   border: 1px solid black;
   height: 50px;
  
 }
 
-.delete{
+th{
+    letter-spacing: 5px;
+}
+td .delete{
     width: 1em;
     border: none;
 }
 
+
+.date, .select-day{
+    margin: 20px auto;
+    display: flex;
+    width: 20%;
+}
+
+.date:focus{
+    outline: 0;
+}
+
+.today{
+    height: 30px;
+    width:350px;
+    border-radius: 15px;
+    padding-left: 100px;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+.select-day{
+margin-left:47%;
+margin-right: 45%; 
+font-family: 'Baloo Bhai', cursive;
+
+}

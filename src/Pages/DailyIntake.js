@@ -201,7 +201,7 @@ handleEditSubmit = (e) => {
                   <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
                   <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
                   <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
-                  <td  className="delete"onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
+                  <td  className="delete" onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
                 
                 </tr>
               
@@ -286,17 +286,17 @@ handleEditSubmit = (e) => {
     
   return(
 <div>
- 
- <input type="date" id="date" value={this.state.date} onChange={this.handleDateChange} name="date" />
+ <p className='select-day'> Select a date</p> 
+ <input type="date" className="date" value={this.state.date} onChange={this.handleDateChange} name="date" />
   
-  <button onClick={this.handleDateClick}>Today :{this.state.date} </button>
+  <button className="date today"onClick={this.handleDateClick}>Today :{this.state.date} </button>
 
 { this.state.editForm ?  <EditDailyIntake handleChange={this.handleChange} handleEditSubmit={this.handleEditSubmit} /> : null }
 
 <table >
     <thead>
      <tr className="row">
-        <th width="20%"></th> 
+        <th width="20%" style={{border: 'none'}}></th> 
         <th width="15%">Serving</th>
         <th width="15%">Calorie ( kcal )</th> 
        
