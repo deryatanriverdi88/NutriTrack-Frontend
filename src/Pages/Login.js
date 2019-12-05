@@ -10,7 +10,7 @@ class Login extends Component {
      password: '',
      name: '',
      age: null,
-     image: "https://images.unsplash.com/photo-1511029029301-60680e65f7c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+     image: "https://images.unsplash.com/photo-1549297161-14f79605a74c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
      gender: "",
      height: null,
      weight: null,
