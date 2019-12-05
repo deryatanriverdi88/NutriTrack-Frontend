@@ -234,7 +234,7 @@ handleEditSubmit = (e) => {
                 <td className="protein"> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
                 <td className="sugar">  {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
                
-                <td className="delete" width="10%" onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
+                <td className="deleteIntake" width="10%" onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
                 </tr>
              })
            }
@@ -297,7 +297,7 @@ handleEditSubmit = (e) => {
   
   <button className="date today"onClick={this.handleDateClick}>Today :{this.state.date} </button>
 
-{ this.state.editForm ?  <EditDailyIntake handleClick={this.handleEditForm }handleChange={this.handleChange} handleEditSubmit={this.handleEditSubmit} /> : null }
+{ this.state.editForm ?  <EditDailyIntake intake={this.state.dailyIntake} handleClick={this.handleEditForm }handleChange={this.handleChange} handleEditSubmit={this.handleEditSubmit} /> : null }
 
 <table >
     <thead>
@@ -310,7 +310,7 @@ handleEditSubmit = (e) => {
         <th width="10%" className="carbs">Carbs ( g )</th>
         <th width="10%" className="protein">Protein ( g )</th>
         <th width="10%" className="sugar">Sugar ( g )</th>
-        <th style={{border: 'none'}}></th>
+        <th width="1%" style={{border: 'none'}}></th>
        
      </tr>
     </thead>

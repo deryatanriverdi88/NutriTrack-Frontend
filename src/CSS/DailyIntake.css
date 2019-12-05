@@ -2,7 +2,7 @@
 table{
   margin:20px auto;
   height: 50vh;
-  width: 90%;
+  width: 80%;
   border-collapse: collapse;
   empty-cells: show;
   
@@ -40,8 +40,8 @@ th{
     background-color:rgba(214,96,209, 0.5)
 }
 
-.delete{
-    width: 1%;
+.deleteIntake{
+    width: 1px;
 }
 
 .edit-intake{
