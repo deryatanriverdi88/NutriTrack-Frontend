@@ -1,6 +1,6 @@
 .login-form{
    
-    margin: 13em auto;
+    margin: 8em auto;
     width: 50em;
     padding: 5%;
     display: flex;
@@ -40,4 +40,5 @@ box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
     display: inline-block;
     width: 15rem;
     height: 2rem;
+    font-family: 'Baloo Bhai', cursive;
 }

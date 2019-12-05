@@ -1,0 +1,40 @@
+
+
+.add-food-input{
+    height:3rem;
+    margin: 1em auto;
+    width: 50em;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+   box-sizing: border-box;
+   text-align: center;
+}
+
+.add-food-input:focus{
+    outline: 0;
+}
+
+.add-food-form label{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    width: 40em;
+    text-align: center;
+    margin: 3em auto 0;
+    font-family: 'Baloo Bhai', cursive;
+    font-size: 30px;
+}
+
+.foods{
+  text-align: center;
+  padding-bottom: 0;
+   /* display: flex;
+   justify-content: center;
+   border: 1px solid red; */
+}
+
+.foods li, .food-name{
+    font-family: 'Domine', serif;
+    font-size: 25px;
+}

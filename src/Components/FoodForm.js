@@ -71,13 +71,12 @@ class FoodForm extends Component {
         // console.log(this.state.serving)
         const {name} = this.props.food
         return(
-            <div> 
-                Food Form
-           
+            <div className="food-form" > 
+    
         
-                     <h3>{ name }</h3>
+                     <h3 className="food-name">{ name }</h3>
                      <form onSubmit={this.handleSubmit}>
-                         <label htmlFor="serving"> Servings of </label> 
+                         <label htmlFor="serving"> <span className="serving"> Servings of </span></label> 
                             <input 
                                 id="serving"
                                 name="serving"
@@ -96,6 +95,7 @@ class FoodForm extends Component {
                                 name="foodId"
                             />
                         <label htmlFor="date">
+                            <span className="date">Date</span>
                              <input 
                                 type="date"
                                 id="date"
@@ -104,7 +104,7 @@ class FoodForm extends Component {
                                 onChange={this.handleChange}
                              />
                         </label>
-                         <label htmlFor="mealType"> Meal Type </label>
+                         <label htmlFor="mealType"> <span className="meal-type">Meal Type</span> </label>
                            <select id="mealType" name="mealType" onChange={this.handleChange}>
                                 <option name=""></option>
                                 <option value="breakfast">Breakfast</option>
@@ -112,10 +112,10 @@ class FoodForm extends Component {
                                 <option value="dinner">Dinner</option>
                                 <option value="snack">Snack</option>
                            </select>
-                           <input type="submit" value="Add to your diary!" />
+                           <input className="add-your-diary" type="submit" value="Add to your diary!" />
                      </form>
-                    <button onClick={this.props.handleClick}> <span> ❌ </span></button>
-                    <button onClick={() => this.handleClick(this.props.food)}> See nutrition info </button>
+                    <button className="x" onClick={this.props.handleClick}> <span > ❌ </span></button>
+                    <button className="nutrition-info-button" onClick={() => this.handleClick(this.props.food)}> See nutrition info </button>
                     {
                         this.state.foodView ? 
                         <FoodItem food={this.state.food} handleClick={this.handleClick} /> : 
