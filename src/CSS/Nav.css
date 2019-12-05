@@ -3,6 +3,7 @@
     background-color: rgb(44,134,81);
     height: 8vh;
     font-family: 'Cinzel', serif;
+    box-sizing:border-box;
     
 }
 
@@ -29,12 +30,29 @@
 }
 
 #header{
-    text-align: left;
-    font-family: 'Courgette', cursive;
-    padding-left: 45px;
-    font-size: 40px;
-    color: rgb(109,209,150);
-    letter-spacing: 10px;
-    text-shadow: 2px 2px 4px #000000;
+   display: flex;
+   margin-top: 25px;
+   box-sizing: border-box;
 }
+
+.header-name{
+    font-family: 'Courgette', cursive;
+    color: rgb(109,209,150);
+    padding-left: 45px;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 10px;
+    font-size: 40px;
+ 
+}
+
+
+.user-name{
+    box-sizing:border-box;
+    font-size: 25px;
+    margin-left: 70%;
+    padding-top: 25px;
+    letter-spacing: 10px;
+}
+
+
 

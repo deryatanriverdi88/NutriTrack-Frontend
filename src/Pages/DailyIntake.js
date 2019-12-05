@@ -31,6 +31,12 @@ handleDeleteClick = (e, dailyIntakeItem) => {
      
 }
 
+handleEditForm = () =>{
+  this.setState({
+    editForm: false
+  })
+}
+
 
 handleClick = (e, dailyIntakeItem) => {
 //  console.log(dailyIntakeItem)
@@ -291,7 +297,7 @@ handleEditSubmit = (e) => {
   
   <button className="date today"onClick={this.handleDateClick}>Today :{this.state.date} </button>
 
-{ this.state.editForm ?  <EditDailyIntake handleChange={this.handleChange} handleEditSubmit={this.handleEditSubmit} /> : null }
+{ this.state.editForm ?  <EditDailyIntake handleClick={this.handleEditForm }handleChange={this.handleChange} handleEditSubmit={this.handleEditSubmit} /> : null }
 
 <table >
     <thead>
