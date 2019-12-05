@@ -291,7 +291,7 @@ handleEditSubmit = (e) => {
     }
     
   return(
-<div>
+<div className="daily-intake">
  <p className='select-day'> Select a date</p> 
  <input type="date" className="date" value={this.state.date} onChange={this.handleDateChange} name="date" />
   

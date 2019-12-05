@@ -64,7 +64,7 @@ class AddFood extends Component {
          } 
    })
   return(
-   <div >
+   <div className="add-food-div" >
        <form className="add-food-form">
            <label>
                Search

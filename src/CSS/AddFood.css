@@ -1,4 +1,9 @@
-
+.add-food-div{
+    background-image: url('https://imagesvc.meredithcorp.io/v3/mm/gif?url=https%3A%2F%2Fcdn-img.health.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_16_9%2Fpublic%2Fstyles%2Fmain%2Fpublic%2Fflat-belly-foods.gif%3Fitok%3D_Jf3jwLd%261549666439&w=400&q=85');
+    height: 150vh;
+    margin: 0;
+    padding-top: 15em;
+}
 
 .add-food-input{
     height:3rem;
@@ -21,7 +26,7 @@
     /* border: 1px solid black; */
     width: 40em;
     text-align: center;
-    margin: 3em auto 0;
+    margin:auto ;
     font-family: 'Baloo Bhai', cursive;
     font-size: 30px;
 }
@@ -30,6 +35,10 @@
 .foods{
   text-align: center;
   padding-bottom: 0;
+  background-color: rgba(250,250,250, 0.7);
+  width: 20%;
+ margin:0 auto;
+ border-radius:15px;
    /* display: flex;
    justify-content: center;
    border: 1px solid red; */
