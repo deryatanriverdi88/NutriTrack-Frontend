@@ -151,13 +151,13 @@ handleEditSubmit = (e) => {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id} >
-                  <td> {dailyIntake.food.name } {dailyIntake.changed_date} <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
-                  <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
-                  <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
-                  <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
-                  <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
-                  <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
-                  <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
+                  <td> {dailyIntake.food.name } {dailyIntake.changed_date} <button className="edit" onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
+                  <td>{dailyIntake.serving} ✖️  ({dailyIntake.food.serving_size} g)</td>
+                  <td className="calorie"> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                  <td className="fat"> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
+                  <td className="carbs"> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
+                  <td className="protein"> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
+                  <td className="sugar"> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
                   <td className="delete" onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
                   </tr>
              })
@@ -172,13 +172,13 @@ handleEditSubmit = (e) => {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id}>
-                  <td>  {dailyIntake.food.name } {dailyIntake.changed_date} <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
-                  <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
-                  <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
-                  <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
-                  <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
-                  <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
-                  <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
+                  <td>  {dailyIntake.food.name } {dailyIntake.changed_date} <button className="edit" onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
+                  <td>{dailyIntake.serving} ✖️  ({dailyIntake.food.serving_size} g)</td>
+                  <td className="calorie"> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                  <td className="fat"> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
+                  <td className="carbs"> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
+                  <td className="protein"> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
+                  <td className="sugar"> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
                   <td className="delete" onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
                 </tr>
              })
@@ -194,14 +194,14 @@ handleEditSubmit = (e) => {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id} >
-                  <td> {dailyIntake.food.name } {dailyIntake.changed_date}<button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button> </td>
-            <td>{dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
-                  <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
-                  <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
-                  <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
-                  <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
-                  <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
-                  <td  className="delete" onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
+                  <td> {dailyIntake.food.name } {dailyIntake.changed_date}<button className="edit" onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button> </td>
+            <td>{dailyIntake.serving} ✖️  ({dailyIntake.food.serving_size} g)</td>
+                  <td className="calorie"> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                  <td className="fat"> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
+                  <td className="carbs"> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
+                  <td className="protein"> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
+                  <td className="sugar"> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
+                  <td  onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
                 
                 </tr>
               
@@ -220,13 +220,13 @@ handleEditSubmit = (e) => {
               // debugger
                 return  <tr key={dailyIntake.food.id} >
                   
-                <td> {dailyIntake.food.name } {dailyIntake.changed_date} <button onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
-                <td> {dailyIntake.serving} * ({dailyIntake.food.serving_size} g)</td>
-                <td> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
-                <td> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
-                <td> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
-                <td> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
-                <td> {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
+                <td> {dailyIntake.food.name } {dailyIntake.changed_date} <button className="edit" onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
+                <td> {dailyIntake.serving} ✖️ ({dailyIntake.food.serving_size} g)</td>
+                <td className="calorie"> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
+                <td className="fat"> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
+                <td className="carbs"> {(dailyIntake.food.carbs * dailyIntake.serving).toFixed(2)}</td> 
+                <td className="protein"> {(dailyIntake.food.protein * dailyIntake.serving).toFixed(2)}</td> 
+                <td className="sugar">  {(dailyIntake.food.sugar * dailyIntake.serving).toFixed(2)}</td>
                
                 <td className="delete" width="10%" onClick={(e) => this.handleDeleteClick(e, dailyIntake)}> <span> ❌ </span> </td>
                 </tr>
@@ -297,13 +297,13 @@ handleEditSubmit = (e) => {
     <thead>
      <tr className="row">
         <th width="20%" style={{border: 'none'}}></th> 
-        <th width="15%">Serving</th>
-        <th width="15%">Calorie ( kcal )</th> 
+        <th width="10%">Serving</th>
+        <th className="calorie"  width="10%">Calorie ( kcal )</th> 
        
-        <th width="15%">Fat ( g )</th>
-        <th width="15%">Carbs ( g )</th>
-        <th width="15%">Protein ( g )</th>
-        <th width="15%">Sugar ( g )</th>
+        <th width="10%" className="fat">Fat ( g )</th>
+        <th width="10%" className="carbs">Carbs ( g )</th>
+        <th width="10%" className="protein">Protein ( g )</th>
+        <th width="10%" className="sugar">Sugar ( g )</th>
         <th style={{border: 'none'}}></th>
        
      </tr>
@@ -338,31 +338,31 @@ handleEditSubmit = (e) => {
       </th>
 
         <td>{(totals().servings)}</td>
-        <td>{(totals().calories)}</td>
-        <td>{(totals().fat).toFixed(2)}</td>
-        <td>{(totals().carbs).toFixed(2)}</td>
-        <td>{(totals().protein).toFixed(2)}</td>
-        <td>{(totals().sugar).toFixed(2)}</td>
+        <td className="calorie">{(totals().calories)}</td>
+        <td className="fat">{(totals().fat).toFixed(2)}</td>
+        <td className="carbs">{(totals().carbs).toFixed(2)}</td>
+        <td className="protein">{(totals().protein).toFixed(2)}</td>
+        <td className="sugar">{(totals().sugar).toFixed(2)}</td>
         
     </tr>
     <tr className="row">
       <th>Your daily goal  </th>
       <td></td>
-      <td>{current_user.goal_calorie}</td>
-      <td>{current_user.goal_fat}</td>
-      <td>{current_user.goal_carbs}</td>
-      <td>{current_user.goal_protein}</td>
-      <td>{current_user.goal_sugar}</td>
+      <td className="calorie">{current_user.goal_calorie}</td>
+      <td className="fat">{current_user.goal_fat}</td>
+      <td className="carbs">{current_user.goal_carbs}</td>
+      <td className="protein">{current_user.goal_protein}</td>
+      <td className="sugar">{current_user.goal_sugar}</td>
     </tr>
     <tr className="row">
     <th>Remaining </th>
    
     <td></td>
-      <td>{remaining().calories}</td>
-      <td>{(remaining().fat).toFixed(2)}</td>
-      <td>{(remaining().carbs).toFixed(2)}</td>
-      <td>{(remaining().protein).toFixed(2)}</td>
-      <td>{(remaining().sugar).toFixed(2)}</td>
+      <td className="calorie">{remaining().calories}</td>
+      <td className="fat">{(remaining().fat).toFixed(2)}</td>
+      <td className="carbs">{(remaining().carbs).toFixed(2)}</td>
+      <td className="protein">{(remaining().protein).toFixed(2)}</td>
+      <td className="sugar">{(remaining().sugar).toFixed(2)}</td>
     
     </tr>
     </tbody>
