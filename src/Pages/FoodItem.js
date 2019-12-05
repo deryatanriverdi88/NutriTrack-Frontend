@@ -5,18 +5,18 @@ const  FoodItem = (props) => {
 const {name, calorie, carb, sugar, fat, serving_size, protein} = props.food
     console.log(props)
   return(
-    <div > 
-        Food Item 
+    <div className="food-item"> 
+       
         <ul>
           
-            <li> Name : { name } </li>
-            <li> Calorie :{ calorie } </li>
-            <li> Carb : { carb } </li>
-            <li> Sugar :{ sugar } </li>
-            <li> Fat : { fat } </li>
-            <li> Protein : { protein } </li>
-            <li> Serving Size :{ serving_size } gr </li>
-            <button onClick={props.handleClick}> ❌</button>
+            <li> <span>Name :</span> { name } </li>
+            <li> <span>Calories :</span>{ calorie } </li>
+            <li> <span>Carbs :</span> { carb } </li>
+            <li> <span>Sugar :</span>{ sugar } </li>
+            <li> <span>Fat :</span> { fat } </li>
+            <li> <span>Protein :</span> { protein } </li>
+            <li> <span>Serving Size :</span>{ serving_size } gr </li>
+            <button  className="x"onClick={props.handleClick}> <span> ❌ </span></button>
         </ul>
     </div>
    )

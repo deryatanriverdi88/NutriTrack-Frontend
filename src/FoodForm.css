@@ -1,8 +1,15 @@
 .food-form{
+
+    /* position: absolute;
+    z-index: 1; */
+   
+    background-color: rgb(57,156,98);
+    top: 25em;
+    left: 40em;
     text-align: center;
     font-family: 'Archivo', sans-serif;
     /* display: flex; */
-    margin: 2em auto 4em;
+    margin: 25em auto 4em;
     width: 30em;
     display: flex;
     flex-direction: column;
@@ -10,6 +17,16 @@
     -webkit-box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
 -moz-box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
 box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
+}
+
+.background-for-z-index{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 150vh;
+    top:0em;
+    background-color: rgba(170,155,155, 0.3)
+
 }
 
 .food-form label{
@@ -47,6 +64,14 @@ box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
 
 .nutrition-info-button{
     width: 10em;
+}
+
+.nutrition-info-button:focus{
+    outline: 0;
+}
+
+.x{
+    outline: 0;
 }
 
 .add-your-diary{
