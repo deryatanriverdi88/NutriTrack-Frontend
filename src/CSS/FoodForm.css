@@ -72,6 +72,8 @@ box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
 
 .x{
     outline: 0;
+    margin-bottom: 3em;
+    padding-left: 9px;
 }
 
 .add-your-diary{
@@ -79,4 +81,8 @@ box-shadow: -11px 5px 42px 1px rgba(176,166,176,1);
     height: 30px;
     margin-left: 10px;
     border-radius: 15px;
+}
+
+#mealType{
+    height: 25px;
 }

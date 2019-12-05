@@ -4,9 +4,11 @@ class  EditDailyIntake extends Component {
  state = {}
  render() {
   return(
-   <div>
-       Edit form
+    <div className="background-for-z-index">
+   <div className="edit-daily-intake">
+   <button onClick={this.props.handleClick}className="x"> ❌ </button>
        <form onSubmit={this.props.handleEditSubmit}>
+      
           <label htmlFor="serving"> Servings of </label> 
             <input 
                 id="serving" 
@@ -24,8 +26,10 @@ class  EditDailyIntake extends Component {
                 <option value="dinner">Dinner</option>
                 <option value="snack">Snack</option>
              </select>
-             <input type="submit" value="Add to your diary!" />
+             <input type="submit" value="Add to your diary!" className="add-your-diary"/>
+            
         </form>
+   </div>
    </div>
     )
    }

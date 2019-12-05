@@ -13,8 +13,9 @@ function Nav(props){
   
   return(
     <>
-    <div>
-      <h1 id="header">NutriTrack</h1>
+    <div id="header" >
+      <h1 className="header-name">NutriTrack</h1>
+       <p className="user-name">{current_user.name}</p>
     </div>
      <nav id="nav-bar">
      {
