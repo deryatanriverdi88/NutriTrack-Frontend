@@ -317,22 +317,22 @@ handleEditSubmit = (e) => {
     <tbody>
         
     <tr className="row">
-      <th width="0%">Breakfast</th>
+      <th width="0%" className="breakfast">Breakfast</th>
     </tr> 
       {breakfast() }
       
       
     <tr className="row">
-      <th width="10%">Lunch</th> 
+      <th width="10%" className="lunch">Lunch</th> 
     </tr>
      {lunch()}
     <tr className="row">
-      <th width="10%">Dinner</th> 
+      <th width="10%" className="dinner">Dinner</th> 
     </tr>
      {dinner()}
   
     <tr className="row">
-      <th width="10%">Snack</th> 
+      <th width="10%" className="snack" >Snack</th> 
     </tr>
       {snacks()} 
      <tr className="row">

@@ -4,6 +4,11 @@
     box-shadow: 10px 15px 6px #aaaaaa;
 }
 
+.profile-image:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
 .profile-div{
    height: 100vh;
    display: flex;
@@ -12,17 +17,26 @@
 background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8) 100%);
 }
 
-
+.info-div:hover{
+    box-shadow:
+                5px 5px #53a7ea,
+                5px 5px #53a7ea,
+                5px 5px #53a7ea;
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+}
 
 
 .img-div{
-    padding-top: 125px;
-    padding-left: 10%;
-    width: 35%;
+    margin-top: 8%;
+    margin-left: 10%;
+    padding-right:0;
+    /* width: 45%; */
 }
 
 .info-div{
     box-sizing:border-box;
+    padding-left: 0;
     padding: 65px;
     margin-top: 8em;
     border-radius: 15%;
