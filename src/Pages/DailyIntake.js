@@ -364,11 +364,11 @@ handleEditSubmit = (e) => {
     <th>Remaining </th>
    
     <td></td>
-      <td className="calorie">{remaining().calories}</td>
-      <td className="fat">{(remaining().fat).toFixed(2)}</td>
-      <td className="carbs">{(remaining().carbs).toFixed(2)}</td>
-      <td className="protein">{(remaining().protein).toFixed(2)}</td>
-      <td className="sugar">{(remaining().sugar).toFixed(2)}</td>
+      { remaining().calories < 0 ? <td className="exeeded">{remaining().calories}</td> : <td className="calorie">{remaining().calories}</td>}
+      {remaining().fat < 0 ?  <td className="exeeded ">{(remaining().fat).toFixed(2)}</td> : <td className="fat">{(remaining().fat).toFixed(2)}</td>}
+      {remaining().carbs < 0 ? <td className="exeeded">{(remaining().carbs).toFixed(2)}</td> : <td className="carbs">{(remaining().carbs).toFixed(2)}</td>}
+      {remaining().protein < 0 ?  <td className="exeeded">{(remaining().protein).toFixed(2)}</td> : <td className="protein">{(remaining().protein).toFixed(2)}</td>}
+      {remaining().sugar < 0 ?  <td className="exeeded">{(remaining().sugar).toFixed(2)}</td> : <td className="sugar">{(remaining().sugar).toFixed(2)}</td>}
     
     </tr>
     </tbody>
