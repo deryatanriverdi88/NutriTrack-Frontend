@@ -1,9 +1,10 @@
 
 #nav-bar{
     background-color: rgba(44,134,81, 0.9);
-    height: 8vh;
+    height: 12vh;
     font-family: 'Cinzel', serif;
     box-sizing:border-box;
+
   
     
 }
@@ -46,7 +47,7 @@
 
 #header{
    display: flex;
-   margin-top: 25px;
+   margin-top: 5px;
    box-sizing: border-box;
    
 }

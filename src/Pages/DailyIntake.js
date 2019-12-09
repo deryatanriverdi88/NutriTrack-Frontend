@@ -295,7 +295,7 @@ handleEditSubmit = (e) => {
  <p className='select-day'> Select a date</p> 
  <input type="date" className="date" value={this.state.date} onChange={this.handleDateChange} name="date" />
   
-  <button className="date today"onClick={this.handleDateClick}>Today :{this.state.date} </button>
+  <button className="date today"onClick={this.handleDateClick}>Today </button>
 
 { this.state.editForm ?  <EditDailyIntake intake={this.state.dailyIntake} handleClick={this.handleEditForm }handleChange={this.handleChange} handleEditSubmit={this.handleEditSubmit} /> : null }
 
@@ -337,6 +337,7 @@ handleEditSubmit = (e) => {
       {snacks()} 
      <tr className="row">
        </tr> 
+    
     <tr className="row">
       
       <th>
