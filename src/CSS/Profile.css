@@ -29,9 +29,8 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
 
 .img-div{
     margin-top: 8%;
-    margin-left: 10%;
-    padding-right:0;
-    /* width: 45%; */
+    margin-left: 70px;
+    width: 45%;
 }
 
 .info-div{
@@ -39,14 +38,15 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
     padding-left: 0;
     padding: 65px;
     margin-top: 8em;
-    border-radius: 15%;
+    margin-left: 0;
     line-height: 2em;
-    width: 30%;
-    height: 50vh;
+    width: 40%;
+    height: 70vh;
     box-shadow: 10px 15px 6px #aaaaaa;
     font-size: 17px;
     /* border: 2px solid gray; */
     background-color:white;
+    overflow: auto;
 }
 
 .info-div ul li{

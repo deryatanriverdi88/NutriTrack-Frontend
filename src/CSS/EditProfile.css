@@ -2,6 +2,7 @@
     margin: 8em auto;
     width: 40em;
     height: 50vh;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
