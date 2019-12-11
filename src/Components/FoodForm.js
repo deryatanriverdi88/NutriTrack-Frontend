@@ -36,7 +36,7 @@ class FoodForm extends Component {
         e.preventDefault()
         console.log('submit')
       
-        fetch('http://localhost:3000/daily_intakes', {
+        fetch('https://nutritrack.herokuapp.com/daily_intakes', {
             method: 'POST',
             headers: {
                 'Content-Type': "application/json",

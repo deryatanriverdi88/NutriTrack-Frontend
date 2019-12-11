@@ -27,7 +27,7 @@ class AddFood extends Component {
  }
 
  componentDidMount(){
-    fetch('http://localhost:3000/foods')
+    fetch('https://nutritrack.herokuapp.com/foods')
     .then(res=>res.json())
     .then(foodsData => {
         // console.log(foodsData)
