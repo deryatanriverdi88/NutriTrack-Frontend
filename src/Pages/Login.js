@@ -163,7 +163,7 @@ handleLoginSubmit = (event) => {
 
    event.preventDefault()
   //  debugger
-   fetch('http://localhost:3000/login', {
+   fetch('https://nutritrack.herokuapp.com/login', {
      method: 'POST',
      headers: {
        "Content-Type" : "application/json",
@@ -192,7 +192,7 @@ handleLoginSubmit = (event) => {
 
 handleSignupSubmit = (event) => {
   event.preventDefault()
-  fetch("http://localhost:3000/signup", {
+  fetch("https://nutritrack.herokuapp.com/signup", {
     method: "POST",
     headers: {
       'Content-Type':"application/json",
