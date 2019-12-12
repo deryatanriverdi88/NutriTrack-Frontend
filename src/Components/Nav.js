@@ -17,7 +17,7 @@ function Nav(props){
       <h1 className="header-name">NutriTrack</h1>
        <p className="user-name">{current_user.name}</p>
     </div>
-     <nav id="nav-bar">
+     <nav id="nav-bar" >
      {
        current_user.id ? 
        <>
