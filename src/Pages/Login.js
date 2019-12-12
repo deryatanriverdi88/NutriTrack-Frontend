@@ -229,7 +229,7 @@ handleSignupSubmit = (event) => {
 
  render() {
 //  console.log(this.props.history)
-   console.log(this.props.current_user)
+  //  console.log(this.props.current_user)
   return(
     <div className="login-container">
    <div className="login-form">
