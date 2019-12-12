@@ -1,9 +1,14 @@
 
+body{
+    width: 100%;
+}
 #nav-bar{
     background-color: rgba(44,134,81, 0.9);
     height: 12vh;
     font-family: 'Cinzel', serif;
     box-sizing:border-box;
+    width: auto;
+    padding-bottom: 15px;
 }
 
 
@@ -15,13 +20,17 @@
     flex-grow: 1 1 1;
     display: inline-block;
     width: 20%;
-    padding-left: 15px;
-    padding-top: 35px;
+    height: auto;
     text-decoration: none;
     font-size: 25px;
     font-weight: bold;
+    text-align: center;
 }
 
+
+.link-div{
+   padding: 25px;
+}
 .link:hover{
    color: darkgreen;
    background-color: rgba(250,250,250, 0.5)
@@ -39,6 +48,7 @@
     text-align: center;
     font-size: 18px;
     padding: 15px;
+    margin-top: 0;
     
 }
 
@@ -51,6 +61,7 @@
    display: flex;
    margin-top: 5px;
    box-sizing: border-box;
+   width: auto;
    
 }
 
@@ -72,23 +83,31 @@
     .link{
        display: block;
        width: 100%;
-       
+       height: 30px;
        padding-top: 45px;
        padding-bottom: 3%;
     }
 
     #nav-bar {
-        height: 55vh;
+        height: 50vh;
         border: 1px solid black;
     
+    }
+
+    #logout{
+        margin-bottom: 15px;
     }
 }
 
 @media screen and (max-width: 855px){
     .link {
-        /* padding: 10px; */
-        padding-top: 40px;
+       height: 30px;
         padding-left: 10px;
+    }
+
+    #nav-bar{
+     
+        height: 45vh;
     }
 
     #logout{
@@ -102,12 +121,11 @@
 @media screen and (max-width: 500px){
 
     #nav-bar{
-        padding-left: 10px;
-        height: 50vh;
+     
+        height: 40vh;
     }
     .link {
-      padding-left: 0;
-      padding-top: 40px;
+    height: 30px;
     
     }
 }
@@ -115,9 +133,10 @@
 .user-name{
     box-sizing:border-box;
     font-size: 25px;
-    margin-left: 70%;
+    margin-left: auto;
     padding-top: 25px;
     letter-spacing: 13px;
+    border: 1px solid black;
 }
 
 

@@ -21,15 +21,19 @@ function Nav(props){
      {
        current_user.id ? 
        <>
+       <div className="link-div">
        <Link className="link" to="/">Home</Link>
        <Link className="link"to="/profile">Profile</Link>
        <Link className="link"to="/daily-intake">My daily intake</Link>
        <Link className="link"to='/add-food'>Add Food</Link>
        <NavLink className="link " to='/login'><button id="logout" onClick={props.clearUser}>Logout</button></NavLink>
+       </div>
        </> : 
        <>
+       <div className="link-div">
        <Link className="link" to="/">Home</Link>
        <Link className="link"to="/login">Login</Link>
+       </div>
        </>
      }
        
