@@ -83,50 +83,21 @@ body{
     .link{
        display: block;
        width: 100%;
-       height: 30px;
-       padding-top: 45px;
-       padding-bottom: 3%;
+       /* padding-top: 45px;
+       padding-bottom: 3%; */
+
+       padding: 10px;
+       font-size: 20px;
     }
 
     #nav-bar {
-        height: 50vh;
+        height: 30vh;
         border: 1px solid black;
     
     }
 
     #logout{
         margin-bottom: 15px;
-    }
-}
-
-@media screen and (max-width: 855px){
-    .link {
-       height: 30px;
-        padding-left: 10px;
-    }
-
-    #nav-bar{
-     
-        height: 45vh;
-    }
-
-    #logout{
-        margin-top: 10px;
-    }
-}
-
-
-
-
-@media screen and (max-width: 500px){
-
-    #nav-bar{
-     
-        height: 40vh;
-    }
-    .link {
-    height: 30px;
-    
     }
 }
 
