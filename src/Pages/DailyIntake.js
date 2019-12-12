@@ -18,7 +18,7 @@ class DailyIntake extends Component {
 
 handleDeleteClick = (e, dailyIntakeItem) => {
    console.log(dailyIntakeItem)
-   fetch(`http://localhost:3000/daily_intakes/${dailyIntakeItem.id}`, {
+   fetch(`https://nutritrack.herokuapp.com/daily_intakes/${dailyIntakeItem.id}`, {
          method: 'DELETE'
        }).then(res => {
          const newArray = this.state.dailyIntakes.filter(dailyIntake =>{
@@ -79,7 +79,7 @@ fetchDailyIntake =  () => {
       Authorization: localStorage.token
     }
   }
-  fetch('http://localhost:3000/daily_intakes', config)
+  fetch('https://nutritrack.herokuapp.com/daily_intakes', config)
   .then(res => res.json())
   .then(dailyIntakeItems => {
     // console.log(dailyIntakeItems)
@@ -118,7 +118,7 @@ handleDateChange = (e) => {
 handleEditSubmit = (e) => {
   e.preventDefault()
   // console.log('submit')
-  fetch(`http://localhost:3000/daily_intakes/${this.state.dailyIntake.id}`, {
+  fetch(`https://nutritrack.herokuapp.com/daily_intakes/${this.state.dailyIntake.id}`, {
     method: 'PATCH', 
     headers: {
       'Content-Type': 'application/json',

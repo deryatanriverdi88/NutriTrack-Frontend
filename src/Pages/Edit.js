@@ -33,7 +33,7 @@ class Edit extends Component {
     // debugger
     event.preventDefault()
    //  debugger
-    fetch(`http://localhost:3000/users/${this.props.current_user.id}`, {
+    fetch(`https://nutritrack.herokuapp.com/users/${this.props.current_user.id}`, {
       method: 'PATCH',
       headers: {
         "Content-Type" : "application/json",

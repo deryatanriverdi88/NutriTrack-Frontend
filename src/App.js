@@ -19,7 +19,7 @@ import './CSS/EditIntake.css'
 class App  extends React.Component{
 
    componentDidMount(){
-      fetch("http://localhost:3000/profile", {
+      fetch("https://nutritrack.herokuapp.com/profile", {
       headers: {
         Authorization: localStorage.token
       }
