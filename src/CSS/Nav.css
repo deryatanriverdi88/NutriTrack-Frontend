@@ -58,26 +58,41 @@ body{
 
 
 #header{
+    padding: 15px;
    display: flex;
-   margin-top: 5px;
+   margin-top: 5px auto;
+   /* margin-right: 55px; */
    box-sizing: border-box;
    width: auto;
+   justify-content: space-between;
    
 }
 
 .header-name{
     font-family: 'Courgette', cursive;
     color: rgb(109,209,150);
-    padding-left: 45px;
+    padding: 0;
+    margin:0;
     text-shadow: 2px 2px 4px #000000;
-    letter-spacing: 50px;
-    font-size: 60px;
+    letter-spacing: 20px;
+    font-size: 50px;
+}
+.user-name{
+    box-sizing:border-box;
+    font-size: 35px;
+    margin:0;
+    padding:0;
+    letter-spacing: 10px;
 }
 
 @media screen and (max-width: 1000px){
     .header-name{
         letter-spacing: 15px;
         font-size: 30px;
+    }
+
+    .user-name{
+        margin-right: 0;
     }
 
     .link{
@@ -96,6 +111,11 @@ body{
     
     }
 
+    #header{
+        display: flex;
+        justify-content: space-between;
+    }
+
     #logout{
         margin-bottom: 15px;
     }
@@ -112,15 +132,32 @@ body{
         font-size: 20px;
         
         }
+
+    .user-name{
+       
+       width: 100%;
+       font-size: 15px;
+       letter-spacing: 1px;
+    
+       padding-top: 10px;
+    }
+    #header{
+       height:auto ;
+       display: flex;
+       flex-wrap: wrap;
+ 
+    }
+
+    .header-name{
+        display: flex;
+        width:100%;
+        /* letter-spacing: 15px; */
+        font-size: 30px;
+      
+    
+    }
 } 
-.user-name{
-    box-sizing:border-box;
-    font-size: 25px;
-    margin-left: auto;
-    padding-top: 25px;
-    letter-spacing: 13px;
-    border: 1px solid black;
-}
+
 
 
 
