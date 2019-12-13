@@ -132,14 +132,15 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
     .img-div{
         /* display: block; */
         margin-top: 0;
-        padding-top: 0;
-        padding-left: 25px;
+        padding-left: 0;
+
     }
     
     .profile-image{
   
-        width: 100%;
-        padding: 20px 10% 20px 30%;
+        width: 70%;
+       
+        padding-top: 10px;
     }
    
      .info-div{
