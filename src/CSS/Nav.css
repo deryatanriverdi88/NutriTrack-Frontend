@@ -155,9 +155,7 @@ body{
     #header{
        height:auto ;
        display: flex;
-       flex-wrap: wrap;
-       height: 25vh;
- 
+       flex-wrap: wrap; 
     }
 
     .header-name{
