@@ -28,8 +28,8 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
 
 
 .img-div{
-    margin-top: 8%;
-    margin-left: 70px;
+    margin-top: 15%;
+    margin-left: 100px;
     width: 45%;
 }
 
@@ -38,9 +38,9 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
     padding-left: 0;
     padding: 65px;
     margin-top: 8em;
-    margin-left: 0;
+    margin-right: 150px;
     line-height: 2em;
-    width: 40%;
+    width: 50%;
     height: 70vh;
     box-shadow: 10px 15px 6px #aaaaaa;
     font-size: 17px;
@@ -88,4 +88,69 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
         font-family: 'Baloo Bhai', cursive;
         background: rgb(195,169,34);
         background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8) 100%);
+}
+
+@media only screen and (max-width: 500px){
+
+     .profile-div{
+         height: auto;
+         display: flex;
+         flex-wrap: wrap;
+     }
+     .img-div{
+         /* display: block; */
+         width: 100%;
+
+         padding: 0;
+     }
+     
+     .profile-image{
+         
+         margin: 0 auto 25px;
+     }
+    
+      .info-div{
+        /* display: block; */
+        width: 100%;
+        margin:0;
+        padding: 5px;
+      }
+
+      .edit, .delete-profile{
+          width: 25%;
+      }
+}
+
+@media only screen and (max-width: 1000px){
+    .profile-div{
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding:0;
+    }
+
+    .img-div{
+        /* display: block; */
+        margin-top: 0;
+        padding-top: 0;
+        padding-left: 25px;
+    }
+    
+    .profile-image{
+  
+        width: 100%;
+        padding: 20px 10% 20px 30%;
+    }
+   
+     .info-div{
+       /* display: block; */
+       width: 80%;
+       margin:0 auto;
+       padding: 5px;
+       height: auto;
+     }
+
+     .edit, .delete-profile{
+         width: 25%;
+     }
 }
