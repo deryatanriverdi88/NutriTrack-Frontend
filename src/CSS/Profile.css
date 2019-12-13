@@ -1,5 +1,6 @@
 .profile-image{
     width: 50%;
+   
     border-radius: 0 50% 0 50%;
     box-shadow: 10px 15px 6px #aaaaaa;
 }
@@ -28,7 +29,7 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
 
 
 .img-div{
-    margin-top: 15%;
+    margin-top: 105px;
     margin-left: 100px;
     width: 45%;
 }
