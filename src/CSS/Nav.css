@@ -68,7 +68,7 @@ body{
    /* margin-right: 55px; */
    box-sizing: border-box;
    width: auto;
-   max-height: 13vh;
+   height: 13vh;
    justify-content: space-between;
    border: 1px solid black;
    
@@ -163,6 +163,8 @@ body{
        height:auto ;
        display: flex;
        flex-wrap: wrap;
+       height: 25vh;
+       padding: 10px;
  
     }
 
