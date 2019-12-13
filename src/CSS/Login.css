@@ -26,7 +26,7 @@ background-color: white;
     padding-top: 5%;
     background: rgb(195,169,34);
     background: linear-gradient(95deg, rgba(195,169,34, 0.5) 0%, rgba(45,213,253,0.6) 100%);
-    height: 150vh;
+    height: auto;
 }
 
 .inputs{
@@ -91,6 +91,10 @@ background-color: white;
         height: auto;
         width: 80%;
     }
+
+    .login-container{
+        padding-bottom: 25px;
+    }
 }
 
 @media only screen and (min-width: 750px){
@@ -99,6 +103,9 @@ background-color: white;
        width: 40%;
        padding:30px;
    }
+   .login-container{
+    padding-bottom: 25px;
+}
 
 }
 
