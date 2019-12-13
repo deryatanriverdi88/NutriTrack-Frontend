@@ -1,5 +1,5 @@
 .edit-profile{
-    margin: 8em auto;
+    margin: 10px auto;
     width: 40em;
     height: 50vh;
     padding: 20px;
@@ -40,4 +40,32 @@ background-color:white;
     position: relative;
     margin: 10px;
     left: 90%;
+}
+
+
+@media only screen and (max-width: 414px){
+
+
+    .edit-profile-div{
+        height: auto;
+        padding-bottom: 25px;
+    }
+    .edit-profile{
+        height: auto;
+        width: 90%;
+    }
+     .edit, .delete-profile{
+         width: 25%;
+     }
+}
+
+@media only screen and (min-width: 700px){
+   .edit-profile{
+       height: auto;
+       padding:0;
+   }
+
+    .edit, .delete-profile{
+        width: 25%;
+    }
 }
