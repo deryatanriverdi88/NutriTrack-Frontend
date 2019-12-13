@@ -133,7 +133,7 @@ body{
 
 @media only screen and (max-width: 414px){
     #nav-bar{
-        height: 40vh;
+        height: auto;
     }
 
     .link {
@@ -173,7 +173,7 @@ body{
 
 @media only screen and (max-width: 360px){
     #nav-bar{
-        height: 45vh;
+        height: auto;
     }
 
   
