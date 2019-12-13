@@ -83,3 +83,29 @@ background-color: white;
     -ms-transform: scale(1.3);
     transform: scale(1.3);
 }
+
+
+@media only screen and (max-width: 500px){
+
+    .login-form, .signup-form{
+        height: auto;
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 750px){
+    .login-form, .signup-form{
+       height: auto;
+       width: 40%;
+       padding:30px;
+   }
+
+}
+
+@media only screen and (max-width: 1200px){
+    .login-form, .signup-form{
+        height: auto;
+        width: 60%;
+        padding:30px;
+    }
+}
