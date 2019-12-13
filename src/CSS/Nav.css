@@ -57,22 +57,33 @@ body{
 }
 
 
+.image{
+    width:5%;
+}
+
 #header{
-    padding: 15px;
+  padding: 15px;
    display: flex;
    margin-top: 5px auto;
    /* margin-right: 55px; */
    box-sizing: border-box;
    width: auto;
+   max-height: 13vh;
    justify-content: space-between;
+   border: 1px solid black;
    
 }
 
+.personal-info{
+    display: flex;
+    justify-content: right;
+    width: 15%;
+}
 .header-name{
     font-family: 'Courgette', cursive;
     color: rgb(109,209,150);
     padding: 0;
-    margin:0;
+    margin-right:30%;
     text-shadow: 2px 2px 4px #000000;
     letter-spacing: 20px;
     font-size: 50px;
@@ -81,7 +92,7 @@ body{
     box-sizing:border-box;
     font-size: 35px;
     margin:0;
-    padding:0;
+    padding:5px;
     letter-spacing: 10px;
 }
 
@@ -89,6 +100,7 @@ body{
     .header-name{
         letter-spacing: 15px;
         font-size: 30px;
+        margin-right: 0;
     }
 
     .user-name{
@@ -122,7 +134,7 @@ body{
 }
 
 
-@media screen and (max-width: 500px){
+@media only screen and (max-width: 500px){
     #nav-bar{
         height: 40vh;
     }
@@ -138,9 +150,15 @@ body{
        width: 100%;
        font-size: 15px;
        letter-spacing: 1px;
-    
        padding-top: 10px;
     }
+
+
+    .image{
+        width:10%;
+    }
+
+
     #header{
        height:auto ;
        display: flex;
@@ -149,7 +167,6 @@ body{
     }
 
     .header-name{
-        display: flex;
         width:100%;
         /* letter-spacing: 15px; */
         font-size: 30px;
