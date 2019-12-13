@@ -46,6 +46,22 @@
     background-repeat: repeat; 
    
   }
+
+  #greeting{
+    position: relative;
+      top: 150px;
+      left: 10px;
+      width: auto;
+      font-size: 20px;
+  }
+
+  .login-message{
+    position: relative;
+      top: 150px;
+      left: 10px;
+      width: auto;
+      font-size: 15px;
+  }
 }
 
 @media screen and (max-width:1000px){
@@ -55,4 +71,46 @@
     background-repeat: repeat; 
    
   }
+
+  #greeting{
+    position: relative;
+      top: 250px;
+      left: 10px;
+      width: auto;
+      font-size: 25px;
+  }
+
+  .login-message{
+    position: relative;
+      top: 250px;
+      left: 10px;
+      width: auto;
+      font-size: 20px;
+  }
 }
+
+/* @media screen and (max-width: 1000px){
+  q{   
+      position: relative;
+      top: 405px;
+      left: 10px;
+      width: auto;
+      font-size: 20px;
+    }
+ 
+    .daily-summary{
+        height: 100vh;
+    }
+}
+
+
+@media screen and (max-width:500px){
+  q{
+    
+    top:25vh;
+    left: 0;
+    width: auto;
+    font-size: 12px;
+  }
+
+}  */
