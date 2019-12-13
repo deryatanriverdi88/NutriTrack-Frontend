@@ -16,8 +16,6 @@ function Nav(props){
     <div id="header" >
       <h1 className="header-name">NutriTrack</h1>
        <p className="user-name">{current_user.name}</p>
-    
-      <img className="header-image" src={current_user.image} alt={current_user.name}/>
     </div>
      <nav id="nav-bar" >
      {
