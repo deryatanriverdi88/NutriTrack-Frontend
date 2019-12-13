@@ -90,7 +90,7 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
         background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8) 100%);
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 414px){
 
      .profile-div{
          height: auto;
@@ -100,12 +100,10 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
      .img-div{
          /* display: block; */
          width: 100%;
-
          padding-left:0;
      }
      
      .profile-image{
-         
          margin: 0 auto 25px;
      }
     
@@ -121,7 +119,7 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
       }
 }
 
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 1024px){
     .profile-div{
         height: auto;
         display: flex;
@@ -132,14 +130,11 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
     .img-div{
         /* display: block; */
         margin-top: 0;
-        padding-left: 165px;
-
     }
     
     .profile-image{
   
         width: 70%;
-       
         padding-top: 10px;
     }
    
