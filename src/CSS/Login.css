@@ -102,10 +102,3 @@ background-color: white;
 
 }
 
-@media only screen and (max-width: 1200px){
-    .login-form, .signup-form{
-        height: auto;
-        width: 60%;
-        padding:30px;
-    }
-}
