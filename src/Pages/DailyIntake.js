@@ -178,7 +178,7 @@ handleEditSubmit = (e) => {
             }) 
             return arr.map(dailyIntake => {
                 return  <tr key={dailyIntake.food.id}>
-                  <td>  {dailyIntake.food.name } {dailyIntake.changed_date} <button className="editIntake" onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
+                  <td>  {dailyIntake.food.name } {dailyIntake.changed_date} <button className="edit-intake" onClick={(e) => this.handleClick(e, dailyIntake)}> Edit </button></td> 
                   <td>{dailyIntake.serving} ✖️  ({dailyIntake.food.serving_size} g)</td>
                   <td className="calorie"> {dailyIntake.food.calorie * dailyIntake.serving}</td> 
                   <td className="fat"> {(dailyIntake.food.fat * dailyIntake.serving).toFixed(2)} </td> 
