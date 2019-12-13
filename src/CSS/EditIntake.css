@@ -20,3 +20,22 @@ background-color: rgb(57,156,98);
     display: flex;
     justify-content: right;
 }
+
+
+@media only screen and (max-width: 500px){
+
+    .edit-daily-intake{
+        height: auto;
+        width: 80%;
+    }
+
+}
+
+@media only screen and (min-width: 750px){
+    .edit-daily-intake{
+       height: auto;
+       width: 40%;
+       padding:30px;
+   }
+
+}
