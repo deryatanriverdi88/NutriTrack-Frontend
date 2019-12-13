@@ -38,3 +38,21 @@
     cursor: grabbing;
 
 }
+
+@media screen and (max-width:500px){
+  #home{
+    height:50vh;
+   
+    background-repeat: repeat; 
+   
+  }
+}
+
+@media screen and (max-width:1000px){
+  #home{
+    height:50vh;
+   
+    background-repeat: repeat; 
+   
+  }
+}

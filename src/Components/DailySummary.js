@@ -9,8 +9,7 @@ class DailySummary extends Component {
    <div className="daily-summary shadow">
        
       <q>It is health that is real wealth and not pieces of gold and silver.<cite>  -Mahatma Gandhi</cite></q>
-       <img className="main-image" src={this.props.user.image} alt={this.props.user.name}/>
-    
+   
    </div>
     )
    }
