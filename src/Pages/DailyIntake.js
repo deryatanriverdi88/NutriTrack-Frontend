@@ -137,7 +137,8 @@ handleEditSubmit = (e) => {
     // this.props.setUser(user) 
     this.setState({
       dailyIntake:  intake,
-      dailyIntakes:  newItem
+      dailyIntakes:  newItem,
+      editForm: false
     })
   })
 } 
