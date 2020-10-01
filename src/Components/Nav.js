@@ -26,7 +26,7 @@ function Nav(props){
        <Link className="link"to="/profile">Profile</Link>
        <Link className="link"to="/daily-intake">My daily intake</Link>
        <Link className="link"to='/add-food'>Add Food</Link>
-       <NavLink className="link " to='/login'><button id="logout" onClick={props.clearUser}>Logout</button></NavLink>
+       <NavLink className="link " to='/login'><button id="logout" onClick={props.logOut}>Logout</button></NavLink>
        </div>
        </> : 
        <>
