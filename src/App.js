@@ -46,7 +46,7 @@ class App  extends React.Component{
   //  console.log(this.props)
   return (
      <>
-        <Nav clearUser={this.logOut}/>
+        <Nav logOut={this.logOut}/>
         <Routes logOut={this.logOut} />
     </>
     )
