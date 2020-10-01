@@ -297,7 +297,7 @@ handleEditSubmit = (e) => {
   
   <button className="date today"onClick={this.handleDateClick}>Today </button>
 
-{ this.state.editForm ?  <EditDailyIntake intake={this.state.dailyIntake} handleClick={this.handleEditForm }handleChange={this.handleChange} handleEditSubmit={this.handleEditSubmit} /> : null }
+{ this.state.editForm ?  <EditDailyIntake intake={this.state.dailyIntake} handleEditForm={this.handleEditForm }handleChange={this.handleChange} handleEditSubmit={this.handleEditSubmit} /> : null }
 
 <table >
     <thead>
