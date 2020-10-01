@@ -180,7 +180,7 @@ handleLoginSubmit = (event) => {
      console.log(userData)
       if(userData.token){
         this.props.setUser(userData.current_user)
-        this.props.history.push(`/`)
+        this.props.history.push(`/profile`)
 
       }  else {
         this.setState({
@@ -217,7 +217,7 @@ handleSignupSubmit = (event) => {
     if(userData.token){
       // debugger
       this.props.setUser(userData.current_user)
-      this.props.history.push(`/`)
+      this.props.history.push(`/profile`)
     }  else {
       this.setState({
         errors: userData.error

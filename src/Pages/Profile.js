@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-function  Profile(){
+function  Profile({logOut}){
 
 const current_user = useSelector(state => {
     // debugger 
@@ -20,7 +20,7 @@ const deleteUser = () => {
     method: 'DELETE'
   })
   .then(
-    localStorage.clear()
+    logOut()
   )
 }
 

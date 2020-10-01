@@ -9,7 +9,7 @@ class  EditDailyIntake extends Component {
     <div className="background-for-z-index">
    <div className="edit-daily-intake">
    
-   <button onClick={this.props.handleClick}className="x"> ❌ </button>
+   <button onClick={this.props.handleEditForm}className="x"> ❌ </button>
   
        <form onSubmit={this.props.handleEditSubmit}>
           <h3>{this.props.intake.food.name}</h3>
