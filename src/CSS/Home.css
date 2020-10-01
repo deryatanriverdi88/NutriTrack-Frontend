@@ -1,13 +1,11 @@
 #home {
-    
     background-image: url('../images/nutritions-4.jpeg');
     background-repeat: no-repeat;
     background-size: 100%;
     height: 100vh;
     box-sizing:border-box;
     margin-top: 0;
-    
-  }
+}
 
 #greeting{
    justify-content: right;
@@ -24,68 +22,68 @@
 
 .login-message{
   justify-content: right;
-   padding-left: 55%; 
-   padding-top: 1%;
-   letter-spacing: 5px;
-  
-
+  padding-left: 55%; 
+  padding-top: 1%;
+  letter-spacing: 5px;
 }
 
 .login-message a {
-    text-decoration: none;
-    padding-left: 15px;
-    letter-spacing: 5px;
-    cursor: grabbing;
-
+  text-decoration: none;
+  padding-left: 15px;
+  letter-spacing: 5px;
+  cursor: grabbing;
 }
 
-@media screen and (max-width:500px){
+@media screen and (min-width:500px){
   #home{
     height:100vh;
-   
-    background-repeat: repeat; 
-   
+    background-repeat: repeat;
   }
 
   #greeting{
     position: relative;
-      top: 110px;
-      left: 10px;
-      width: auto;
-      font-size: 20px;
+    top: 200px;
+    left: 10px;
+    width: auto;
+    font-size: 20px;
   }
 
   .login-message{
     position: relative;
-      top: 130px;
-      left: 10px;
-      width: auto;
-      font-size: 15px;
+    top: 210px;
+    left: 10px;
+    width: auto;
+    font-size: 15px;
   }
 }
 
-@media screen and (min-width:750px){
+@media screen and (min-width: 300px){
+  #home{
+    height:50vh;
+    background-repeat: repeat; 
+  }
+}
+
+@media screen and (min-width:500px){
   #home{
     height:150vh;
-   
     background-repeat: repeat; 
-   
   }
 
   #greeting{
     position: relative;
-      top: 250px;
-      left: 10px;
-      width: auto;
-      font-size: 25px;
+    top: 350px;
+    left: 10px;
+    width: auto;
+    font-size: 25px;
   }
 
   .login-message{
     position: relative;
-      top: 250px;
-      left: 10px;
-      width: auto;
-      font-size: 20px;
+    top: 350px;
+    left: 10px;
+    width: auto;
+    font-size: 20px;
   }
 }
 
