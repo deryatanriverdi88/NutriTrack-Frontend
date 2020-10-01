@@ -20,7 +20,7 @@ const deleteUser = () => {
     method: 'DELETE'
   })
   .then(
-    localStorage.clear()
+    logOut()
   )
 }
 
