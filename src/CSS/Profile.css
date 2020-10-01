@@ -1,6 +1,5 @@
 .profile-image{
     width: 50%;
-   
     border-radius: 0 50% 0 50%;
     box-shadow: 10px 15px 6px #aaaaaa;
 }
@@ -15,7 +14,7 @@
    display: flex;
    box-sizing:border-box;
    background: rgb(195,169,34);
-background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8) 100%);
+   background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8) 100%);
 }
 
 .info-div:hover{
@@ -26,7 +25,6 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
         -webkit-transform: translateX(3px);
         transform: translateX(3px);
 }
-
 
 .img-div{
     margin-top: 200px;
@@ -45,7 +43,6 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
     height: 60vh;
     box-shadow: 10px 15px 6px #aaaaaa;
     font-size: 17px;
-    /* border: 2px solid gray; */
     background-color:white;
     overflow: auto;
 }
@@ -75,9 +72,9 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
     border-radius: 15px;
     margin:40px auto;
     cursor: grabbing;
-   margin-right: 45px;
-   color:black;
-   font-family: 'Baloo Bhai', cursive;
+    margin-right: 45px;
+    color:black;
+    font-family: 'Baloo Bhai', cursive;
 }
 
 
@@ -92,32 +89,30 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
 }
 
 @media only screen and (max-width: 414px){
+    .profile-div{
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-     .profile-div{
-         height: auto;
-         display: flex;
-         flex-wrap: wrap;
-     }
-     .img-div{
-         /* display: block; */
-         width: 100%;
-         padding-left:0;
-     }
+    .img-div{
+        width: 100%;
+        padding-left:0;
+    }
      
-     .profile-image{
-         margin: 0 auto 25px;
-     }
+    .profile-image{
+        margin: 0 auto 25px;
+    }
     
-      .info-div{
-        /* display: block; */
+    .info-div{
         width: 100%;
         margin:0;
         padding: 5px;
-      }
+    }
 
-      .edit, .delete-profile{
-          width: 25%;
-      }
+    .edit, .delete-profile{
+        width: 25%;
+    }
 }
 
 @media only screen and (max-width: 1024px){
@@ -129,25 +124,22 @@ background: linear-gradient(95deg, rgba(195,169,34, 0.6) 0%, rgba(45,213,253,0.8
     }
 
     .img-div{
-        /* display: block; */
         margin-top: 20px;
     }
     
     .profile-image{
-  
         width: 70%;
         padding-top: 10px;
     }
    
-     .info-div{
-       /* display: block; */
+    .info-div{
        width: 80%;
        margin:30px auto;
        padding: 5px;
        height: auto;
-     }
+    }
 
-     .edit, .delete-profile{
-         width: 25%;
-     }
+    .edit, .delete-profile{
+        width: 25%;
+    }
 }
